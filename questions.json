@@ -1,0 +1,438 @@
+{
+  "debutant": [
+    {
+      "chapterId": "c1",
+      "title": "Chapitre 1 : Les Salutations & Mots de Base",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "fr": "Bonjour", "sv": "Hej", "article": "" },
+          { "id": "d_c1_v_1", "type": "qcm", "q": "Que signifie 'Hej' ?", "options": ["Au revoir", "Bonjour", "Merci"], "a": "Bonjour" },
+          { "id": "d_c1_v_2", "type": "strict", "q": "Traduisez : Bonjour", "a": ["Hej"] },
+          
+          { "type": "card", "fr": "Au revoir", "sv": "Hejdå", "article": "" },
+          { "id": "d_c1_v_3", "type": "qcm", "q": "Comment dit-on 'Au revoir' ?", "options": ["Hejdå", "Hej", "och"], "a": "Hejdå" },
+          { "id": "d_c1_v_4", "type": "strict", "q": "Traduisez : Au revoir", "a": ["Hejdå"] },
+          
+          { "type": "card", "fr": "et", "sv": "och", "article": "" },
+          { "id": "d_c1_v_5", "type": "qcm", "q": "Que signifie le mot 'och' ?", "options": ["ou", "avec", "et"], "a": "et" },
+          { "id": "d_c1_v_6", "type": "strict", "q": "Traduisez le mot : et", "a": ["och"] },
+          
+          { "type": "card", "fr": "Un homme", "sv": "man", "article": "en" },
+          { "id": "d_c1_v_7", "type": "qcm", "q": "Comment dit-on 'un homme' ?", "options": ["en kvinna", "en man", "och"], "a": "en man" },
+          { "id": "d_c1_v_8", "type": "strict", "q": "Traduisez : un homme", "a": ["en man"] },
+          
+          { "type": "card", "fr": "Une femme", "sv": "kvinna", "article": "en" },
+          { "id": "d_c1_v_9", "type": "qcm", "q": "Que signifie 'en kvinna' ?", "options": ["une femme", "un homme", "et"], "a": "une femme" },
+          { "id": "d_c1_v_10", "type": "strict", "q": "Traduisez : une femme", "a": ["en kvinna"] }
+        ],
+        "grammar": [
+          { "type": "card", "title": "Le pronom : Je", "text": "En suédois, <b>Jag</b> signifie 'Je'." },
+          { "id": "d_c1_g_1", "type": "qcm", "q": "Comment dit-on 'Je' ?", "options": ["Du", "Jag", "och"], "a": "Jag" },
+          { "id": "d_c1_g_2", "type": "strict", "q": "Traduisez : Je", "a": ["Jag"] },
+          
+          { "type": "card", "title": "Le pronom : Tu", "text": "En suédois, <b>Du</b> signifie 'Tu'." },
+          { "id": "d_c1_g_3", "type": "qcm", "q": "Comment dit-on 'Tu' ?", "options": ["Jag", "Hejdå", "Du"], "a": "Du" },
+          { "id": "d_c1_g_4", "type": "strict", "q": "Traduisez : Tu", "a": ["Du"] },
+          
+          { "type": "card", "title": "Le verbe Être : är", "text": "Le verbe être au présent est invariable : <b>är</b> (suis, es, est, sont)." },
+          { "id": "d_c1_g_5", "type": "qcm", "q": "Que signifie 'är' ?", "options": ["avoir", "être (présent)", "appeler"], "a": "être (présent)" },
+          { "id": "d_c1_g_6", "type": "strict", "q": "Traduisez : Je suis", "a": ["Jag är"] },
+          
+          { "type": "card", "title": "Structure simple avec 'man'", "text": "Pour dire 'un homme est', on écrit simplement : <b>en man är</b>." },
+          { "id": "d_c1_g_7", "type": "strict", "q": "Traduisez : Tu es", "a": ["Du är"] },
+          { "id": "d_c1_g_8", "type": "qcm", "q": "Quelle option signifie 'un homme est' ?", "options": ["en man är", "en kvinna är", "jag är"], "a": "en man är" },
+          
+          { "type": "card", "title": "Structure simple avec 'kvinna'", "text": "Pour dire 'une femme est', on écrit : <b>en kvinna är</b>." },
+          { "id": "d_c1_g_9", "type": "strict", "q": "Traduisez : une femme est", "a": ["en kvinna är"] },
+          { "id": "d_c1_g_10", "type": "qcm", "q": "Complétez : 'Jag ___ en kvinna' (Je suis une femme)", "options": ["och", "är", "du"], "a": "är" }
+        ],
+        "reading": [
+          { "id": "d_c1_r_1", "type": "qcm", "context": "Hej! Jag är en man.", "q": "Qui parle dans ce texte ?", "options": ["Une femme", "Un homme", "Un enfant"], "a": "Un homme" },
+          { "id": "d_c1_r_2", "type": "strict", "context": "Hej! Jag är en man.", "q": "Quel mot signifie 'Bonjour' ?", "a": ["Hej"] },
+          { "id": "d_c1_r_3", "type": "qcm", "context": "Hej! Du är en kvinna.", "q": "À qui s'adresse le locuteur ?", "options": ["À un homme", "À une femme", "À personne"], "a": "À une femme" },
+          { "id": "d_c1_r_4", "type": "strict", "context": "Du är en kvinna.", "q": "Quel mot signifie 'Tu' ?", "a": ["Du"] },
+          { "id": "d_c1_r_5", "type": "qcm", "context": "Hej! Jag är en man och du är en kvinna.", "q": "Quel petit mot lie les deux propositions ?", "options": ["och", "är", "hej"], "a": "och" },
+          { "id": "d_c1_r_6", "type": "strict", "context": "Jag är en man och du är en kvinna.", "q": "Traduisez le mot 'och' trouvé dans ce texte :", "a": ["et"] },
+          { "id": "d_c1_r_7", "type": "qcm", "context": "Hejdå! Jag är en kvinna.", "q": "Que dit la personne en partant ?", "options": ["Bonjour", "Au revoir", "Merci"], "a": "Au revoir" },
+          { "id": "d_c1_r_8", "type": "strict", "context": "Hejdå! Jag är en kvinna.", "q": "Écrivez le mot qui signifie 'Au revoir' :", "a": ["Hejdå"] },
+          { "id": "d_c1_r_9", "type": "qcm", "context": "en man och en kvinna", "q": "De combien de personnes parle-t-on ?", "options": ["Une seule", "Deux personnes", "Trois personnes"], "a": "Deux personnes" },
+          { "id": "d_c1_r_10", "type": "strict", "context": "en man och en kvinna", "q": "Écrivez le mot suédois pour 'homme' présent dans le texte :", "a": ["man"] }
+        ],
+        "review": [
+          { "id": "d_c1_w_1", "type": "qcm", "q": "Révision : 'en kvinna' signifie...", "options": ["une femme", "un homme"], "a": "une femme" },
+          { "id": "d_c1_w_2", "type": "strict", "q": "Révision : Écrivez 'un homme'", "a": ["en man"] },
+          { "id": "d_c1_w_3", "type": "qcm", "q": "Révision : 'Du är' signifie...", "options": ["Je suis", "Tu es"], "a": "Tu es" },
+          { "id": "d_c1_w_4", "type": "strict", "q": "Révision : Écrivez 'Je suis'", "a": ["Jag är"] },
+          { "id": "d_c1_w_5", "type": "qcm", "q": "Révision : 'och' signifie...", "options": ["et", "ou"], "a": "et" },
+          { "id": "d_c1_w_6", "type": "strict", "q": "Phrase complète : Écrivez 'Bonjour, je suis un homme'", "a": ["Hej jag är en man", "Hej, jag är en man"], "hard": true },
+          { "id": "d_c1_w_7", "type": "strict", "q": "Phrase complète : Écrivez 'Tu es une femme'", "a": ["Du är en kvinna"], "hard": true },
+          { "id": "d_c1_w_8", "type": "strict", "q": "Phrase complète : Écrivez 'un homme et une femme'", "a": ["en man och en kvinna"], "hard": true },
+          { "id": "d_c1_w_9", "type": "strict", "q": "Phrase complète : Écrivez 'Bonjour och au revoir' (En suédois)", "a": ["Hej och hejdå"], "hard": true },
+          { "id": "d_c1_w_10", "type": "strict", "q": "Phrase complète : Écrivez 'Au revoir, tu es un homme'", "a": ["Hejdå du är en man", "Hejdå, du är en man"], "hard": true }
+        ]
+      }
+    },
+    {
+      "chapterId": "c2",
+      "title": "Chapitre 2 : La Famille & Possessions",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "fr": "Une mère", "sv": "mamma", "article": "en" },
+          { "id": "d_c2_v_1", "type": "qcm", "q": "Comment dit-on 'une mère' ?", "options": ["en pappa", "en mamma", "ett barn"], "a": "en mamma" },
+          { "id": "d_c2_v_2", "type": "strict", "q": "Traduisez : une mère", "a": ["en mamma"] },
+          
+          { "type": "card", "fr": "Un père", "sv": "pappa", "article": "en" },
+          { "id": "d_c2_v_3", "type": "qcm", "q": "Comment dit-on 'un père' ?", "options": ["en mamma", "en pappa", "ett barn"], "a": "en pappa" },
+          { "id": "d_c2_v_4", "type": "strict", "q": "Traduisez : un père", "a": ["en pappa"] },
+          
+          { "type": "card", "fr": "Un enfant", "sv": "barn", "article": "ett" },
+          { "id": "d_c2_v_5", "type": "qcm", "q": "Attention à l'article, comment dit-on 'un enfant' ?", "options": ["en barn", "ett barn", "en pappa"], "a": "ett barn" },
+          { "id": "d_c2_v_6", "type": "strict", "q": "Traduisez : un enfant", "a": ["ett barn"] },
+          
+          { "type": "card", "fr": "Parents réunis", "sv": "mamma och pappa", "article": "" },
+          { "id": "d_c2_v_7", "type": "qcm", "q": "Que signifie 'en mamma och en pappa' ?", "options": ["une mère et un père", "un homme et une femme"], "a": "une mère et un père" },
+          { "id": "d_c2_v_8", "type": "strict", "q": "Traduisez : un père et un enfant", "a": ["en pappa och ett barn"] },
+          
+          { "type": "card", "fr": "L'article neutre", "sv": "ett", "article": "" },
+          { "id": "d_c2_v_9", "type": "qcm", "q": "Le mot 'barn' utilise quel article indéfini ?", "options": ["en", "ett", "och"], "a": "ett" },
+          { "id": "d_c2_v_10", "type": "strict", "q": "Traduisez : une mère et un enfant", "a": ["en mamma och ett barn"] }
+        ],
+        "grammar": [
+          { "type": "card", "title": "Le pronom : Il", "text": "En suédois, <b>Han</b> signifie 'Il'." },
+          { "id": "d_c2_g_1", "type": "qcm", "q": "Comment dit-on 'Il' en suédois ?", "options": ["Hon", "Han", "Jag"], "a": "Han" },
+          { "id": "d_c2_g_2", "type": "strict", "q": "Traduisez : Il", "a": ["Han"] },
+          
+          { "type": "card", "title": "Le pronom : Elle", "text": "En suédois, <b>Hon</b> signifie 'Elle'." },
+          { "id": "d_c2_g_3", "type": "qcm", "q": "Comment dit-on 'Elle' en suédois ?", "options": ["Han", "Hon", "Du"], "a": "Hon" },
+          { "id": "d_c2_g_4", "type": "strict", "q": "Traduisez : Elle", "a": ["Hon"] },
+          
+          { "type": "card", "title": "Le verbe Avoir : har", "text": "Le verbe avoir au présent est invariable : <b>har</b> (ai, as, a, ont)." },
+          { "id": "d_c2_g_5", "type": "qcm", "q": "Que signifie le verbe 'har' ?", "options": ["être", "avoir", "appeler"], "a": "avoir" },
+          { "id": "d_c2_g_6", "type": "strict", "q": "Traduisez : J'ai", "a": ["Jag har"] },
+          
+          { "type": "card", "title": "Possession au masculin", "text": "Pour dire 'Il a', on associe le pronom et le verbe : <b>Han har</b>." },
+          { "id": "d_c2_g_7", "type": "strict", "q": "Traduisez : Tu as", "a": ["Du har"] },
+          { "id": "d_c2_g_8", "type": "strict", "q": "Traduisez : Il a", "a": ["Han har"] },
+          
+          { "type": "card", "title": "Possession au féminin", "text": "Pour dire 'Elle a', on associe le pronom et le verbe : <b>Hon har</b>." },
+          { "id": "d_c2_g_9", "type": "strict", "q": "Traduisez : Elle a", "a": ["Hon har"] },
+          { "id": "d_c2_g_10", "type": "qcm", "q": "Complétez : 'Han ___ ett barn' (Il a un enfant)", "options": ["är", "har", "och"], "a": "har" }
+        ],
+        "reading": [
+          { "id": "d_c2_r_1", "type": "qcm", "context": "Han har en pappa.", "q": "De qui parle-t-on ici ?", "options": ["D'une femme", "D'un homme", "D'un enfant"], "a": "D'un homme" },
+          { "id": "d_c2_r_2", "type": "strict", "context": "Han har en pappa.", "q": "Traduisez l'action (le verbe) de cette phrase :", "a": ["a"] },
+          { "id": "d_c2_r_3", "type": "qcm", "context": "Hon har en mamma och ett barn.", "q": "Qui possède cette famille ?", "options": ["Il", "Elle", "Un enfant"], "a": "Elle" },
+          { "id": "d_c2_r_4", "type": "strict", "context": "Hon har en mamma och ett barn.", "q": "Écrivez le mot pour 'enfant' présent dans le texte :", "a": ["barn"] },
+          { "id": "d_c2_r_5", "type": "qcm", "context": "Jag har ett barn. Du har ett barn.", "q": "Combien d'enfants y a-t-il au total dans cette scène ?", "options": ["Un seul", "Deux enfants", "Aucun"], "a": "Deux enfants" },
+          { "id": "d_c2_r_6", "type": "strict", "context": "Jag har ett barn.", "q": "Quel mot signifie 'J' / 'Je' ?", "a": ["Jag"] },
+          { "id": "d_c2_r_7", "type": "qcm", "context": "en man har en mamma.", "q": "Qui a une mère ?", "options": ["Une femme", "Un homme", "Un enfant"], "a": "Un homme" },
+          { "id": "d_c2_r_8", "type": "strict", "context": "en kvinna har en pappa.", "q": "Écrivez le mot pour 'père' trouvé dans ce texte :", "a": ["pappa"] },
+          { "id": "d_c2_r_9", "type": "qcm", "context": "Hej! Hon est en mamma.", "q": "Quel est le statut de la femme ?", "options": ["Elle est enfant", "Elle est mère", "Elle est un homme"], "a": "Elle est mère" },
+          { "id": "d_c2_r_10", "type": "strict", "context": "Hejdå pappa!", "q": "Traduisez cette salutation de départ :", "a": ["Au revoir père", "Au revoir papa"] }
+        ],
+        "review": [
+          { "id": "d_c2_w_1", "type": "qcm", "q": "Révision globale : 'ett barn' c'est...", "options": ["un père", "un enfant"], "a": "un enfant" },
+          { "id": "d_c2_w_2", "type": "strict", "q": "Révision globale : Écrivez 'une mère'", "a": ["en mamma"] },
+          { "id": "d_c2_w_3", "type": "qcm", "q": "Révision globale : 'Hon' veut dire...", "options": ["Il", "Elle"], "a": "Elle" },
+          { "id": "d_c2_w_4", "type": "strict", "q": "Révision globale : Écrivez 'Il a'", "a": ["Han har"] },
+          { "id": "d_c2_w_5", "type": "qcm", "q": "Révision globale : 'Du har' signifie...", "options": ["Tu as", "Je suis"], "a": "Tu as" },
+          { "id": "d_c2_w_6", "type": "strict", "q": "Phrase complète : Écrivez 'J'ai un enfant'", "a": ["Jag har ett barn"], "hard": true },
+          { "id": "d_c2_w_7", "type": "strict", "q": "Phrase complète : Écrivez 'Elle a un père'", "a": ["Hon har en pappa"], "hard": true },
+          { "id": "d_c2_w_8", "type": "strict", "q": "Phrase complète : Écrivez 'Un homme a une mère'", "a": ["en man har en mamma"], "hard": true },
+          { "id": "d_c2_w_9", "type": "strict", "q": "Phrase complète : Écrivez 'Une femme a un enfant'", "a": ["en kvinna har ett barn"], "hard": true },
+          { "id": "d_c2_w_10", "type": "strict", "q": "Phrase complète : Écrivez 'Il est un père et elle est une mère' (En suédois)", "a": ["Han är en pappa och hon är en mamma"], "hard": true }
+        ]
+      }
+    },
+    {
+      "chapterId": "c3",
+      "title": "Chapitre 3 : La Nourriture & Les Boissons",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "fr": "Un pain", "sv": "bröd", "article": "ett" },
+          { "id": "d_c3_v_1", "type": "qcm", "q": "Comment dit-on 'un pain' ?", "options": ["en bröd", "ett bröd", "en mamma"], "a": "ett bröd" },
+          { "id": "d_c3_v_2", "type": "strict", "q": "Traduisez : un pain", "a": ["ett bröd"] },
+          
+          { "type": "card", "fr": "De l'eau", "sv": "vatten", "article": "" },
+          { "id": "d_c3_v_3", "type": "qcm", "q": "Comment dit-on 'eau / de l'eau' ?", "options": ["vatten", "bröd", "äpple"], "a": "vatten" },
+          { "id": "d_c3_v_4", "type": "strict", "q": "Traduisez : de l'eau", "a": ["vatten"] },
+          
+          { "type": "card", "fr": "Une pomme", "sv": "äpple", "article": "ett" },
+          { "id": "d_c3_v_5", "type": "qcm", "q": "Quel est l'article de 'äpple' (pomme) ?", "options": ["en", "ett", "och"], "a": "ett" },
+          { "id": "d_c3_v_6", "type": "strict", "q": "Traduisez : une pomme", "a": ["ett äpple"] },
+          
+          { "type": "card", "fr": "Pain & Eau", "sv": "bröd och vatten", "article": "" },
+          { "id": "d_c3_v_7", "type": "qcm", "q": "Que signifie 'ett bröd och vatten' ?", "options": ["un pain et de l'eau", "une pomme et de l'eau"], "a": "un pain et de l'eau" },
+          { "id": "d_c3_v_8", "type": "strict", "q": "Traduisez : un pain et une pomme", "a": ["ett bröd och ett äpple"] },
+          
+          { "type": "card", "fr": "Catégorie liquide", "sv": "vatten", "article": "" },
+          { "id": "d_c3_v_9", "type": "qcm", "q": "Lequel est une boisson ?", "options": ["bröd", "vatten", "äpple"], "a": "vatten" },
+          { "id": "d_c3_v_10", "type": "strict", "q": "Traduisez : une pomme et de l'eau", "a": ["ett äpple och vatten"] }
+        ],
+        "grammar": [
+          { "type": "card", "title": "Le verbe Manger", "text": "En suédois, manger se dit <b>äter</b> au présent." },
+          { "id": "d_c3_g_1", "type": "qcm", "q": "Que signifie le verbe 'äter' ?", "options": ["boire", "manger", "avoir"], "a": "manger" },
+          { "id": "d_c3_g_2", "type": "strict", "q": "Traduisez : Je mange", "a": ["Jag äter"] },
+          
+          { "type": "card", "title": "Le verbe Boire", "text": "En suédois, boire se dit <b>dricker</b> au présent." },
+          { "id": "d_c3_g_3", "type": "qcm", "q": "Que signifie le verbe 'dricker' ?", "options": ["manger", "être", "boire"], "a": "boire" },
+          { "id": "d_c3_g_4", "type": "strict", "q": "Traduisez : Tu bois", "a": ["Du dricker"] },
+          
+          { "type": "card", "title": "Manger au masculin", "text": "Pour dire 'Il mange', on associe : <b>Han äter</b>." },
+          { "id": "d_c3_g_5", "type": "strict", "q": "Traduisez : Il mange", "a": ["Han äter"] },
+          { "id": "d_c3_g_6", "type": "strict", "q": "Traduisez : Elle boit", "a": ["Hon dricker"] },
+          
+          { "type": "card", "title": "L'action de l'enfant", "text": "Pour dire qu'un enfant boit, on écrit : <b>ett barn dricker</b>." },
+          { "id": "d_c3_g_7", "type": "qcm", "q": "Traduisez 'un enfant boit' :", "options": ["ett barn dricker", "ett barn äter", "en man dricker"], "a": "ett barn dricker" },
+          { "id": "d_c3_g_8", "type": "strict", "q": "Traduisez : un homme mange", "a": ["en man äter"] },
+          
+          { "type": "card", "title": "L'action de la femme", "text": "Pour dire qu'une femme boit, on écrit : <b>en kvinna dricker</b>." },
+          { "id": "d_c3_g_9", "type": "strict", "q": "Traduisez : une femme boit", "a": ["en kvinna dricker"] },
+          { "id": "d_c3_g_10", "type": "qcm", "q": "Complétez : 'Jag ___ vatten' (Je bois de l'eau)", "options": ["äter", "dricker", "har"], "a": "dricker" }
+        ],
+        "reading": [
+          { "id": "d_c3_r_1", "type": "qcm", "context": "En man äter ett bröd.", "q": "Que fait l'homme ?", "options": ["Il boit de l'eau", "Il mange un pain", "Il a un enfant"], "a": "Il mange un pain" },
+          { "id": "d_c3_r_2", "type": "strict", "context": "En man äter ett bröd.", "q": "Écrivez le verbe de cette phrase :", "a": ["äter"] },
+          { "id": "d_c3_r_3", "type": "qcm", "context": "En kvinna dricker vatten.", "q": "Que fait la femme ?", "options": ["Elle mange une pomme", "Elle boit de l'eau", "Elle s'en va"], "a": "Elle boit de l'eau" },
+          { "id": "d_c3_r_4", "type": "strict", "context": "En kvinna dricker vatten.", "q": "Quel aliment ou boisson consomme-t-elle ?", "a": ["vatten"] },
+          { "id": "d_c3_r_5", "type": "qcm", "context": "Ett barn äter ett äpple och dricker vatten.", "q": "Qu'est-ce que l'enfant consomme ?", "options": ["Seulement une pomme", "Du pain et de l'eau", "Une pomme et de l'eau"], "a": "Une pomme et de l'eau" },
+          { "id": "d_c3_r_6", "type": "strict", "context": "Ett barn äter ett äpple.", "q": "Écrivez le mot pour 'pomme' présent ici :", "a": ["äpple"] },
+          { "id": "d_c3_r_7", "type": "qcm", "context": "Han har ett bröd. Hon äter.", "q": "Qui mange ?", "options": ["L'homme", "La femme (Elle)", "L'enfant"], "a": "La femme (Elle)" },
+          { "id": "d_c3_r_8", "type": "strict", "context": "Jag dricker vatten och du äter ett bröd.", "q": "Traduisez la fin de la phrase : 'du äter ett bröd'", "a": ["tu manges un pain"] },
+          { "id": "d_c3_r_9", "type": "qcm", "context": "En mamma och ett barn äter ett äpple.", "q": "Qui mange la pomme ?", "options": ["Une mère et un enfant", "Un homme", "Un père"], "a": "Une mère et un enfant" },
+          { "id": "d_c3_r_10", "type": "strict", "context": "Hejdå! Jag dricker vatten.", "q": "Quel mot signifie 'bois/boit' ?", "a": ["dricker"] }
+        ],
+        "review": [
+          { "id": "d_c3_w_1", "type": "qcm", "q": "Révision globale : 'ett bröd' signifie...", "options": ["un pain", "une pomme"], "a": "un pain" },
+          { "id": "d_c3_w_2", "type": "strict", "q": "Révision globale : Écrivez 'de l'eau'", "a": ["vatten"] },
+          { "id": "d_c3_w_3", "type": "qcm", "q": "Révision globale : Le verbe 'dricker' veut dire...", "options": ["manger", "boire"], "a": "boire" },
+          { "id": "d_c3_w_4", "type": "strict", "q": "Révision globale : Écrivez 'Je mange'", "a": ["Jag äter"] },
+          { "id": "d_c3_w_5", "type": "qcm", "q": "Révision globale : 'ett äpple' est...", "options": ["une pomme", "un enfant"], "a": "une pomme" },
+          { "id": "d_c3_w_6", "type": "strict", "q": "Phrase complète : Écrivez 'Un homme mange un pain'", "a": ["en man äter ett bröd"], "hard": true },
+          { "id": "d_c3_w_7", "type": "strict", "q": "Phrase complète : Écrivez 'Une femme boit de l'eau'", "a": ["en kvinna dricker vatten"], "hard": true },
+          { "id": "d_c3_w_8", "type": "strict", "q": "Phrase complète : Écrivez 'Un enfant mange une pomme'", "a": ["ett barn äter ett äpple"], "hard": true },
+          { "id": "d_c3_w_9", "type": "strict", "q": "Phrase complète : Écrivez 'Je mange un pain et je bois de l'eau'", "a": ["Jag äter ett bröd och jag dricker vatten"], "hard": true },
+          { "id": "d_c3_w_10", "type": "strict", "q": "Phrase complète : Écrivez 'Elle a une pomme et il a de l'eau'", "a": ["Hon har ett äpple och han har vatten"], "hard": true }
+        ]
+      }
+    },
+    {
+      "chapterId": "c4",
+      "title": "Chapitre 4 : Routine & Objets de Lecture",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "fr": "Un livre", "sv": "bok", "article": "en" },
+          { "id": "d_c4_v_1", "type": "qcm", "q": "Comment dit-on 'un livre' ?", "options": ["en tidning", "en bok", "ett barn"], "a": "en bok" },
+          { "id": "d_c4_v_2", "type": "strict", "q": "Traduisez : un livre", "a": ["en bok"] },
+          
+          { "type": "card", "fr": "Un journal", "sv": "tidning", "article": "en" },
+          { "id": "d_c4_v_3", "type": "qcm", "q": "Comment dit-on 'un journal' ?", "options": ["en bok", "en tidning", "ett bröd"], "a": "en tidning" },
+          { "id": "d_c4_v_4", "type": "strict", "q": "Traduisez : un journal", "a": ["en tidning"] },
+          
+          { "type": "card", "fr": "Genre du livre", "sv": "en bok", "article": "" },
+          { "id": "d_c4_v_5", "type": "qcm", "q": "Quel article porte le mot 'bok' ?", "options": ["en", "ett", "och"], "a": "en" },
+          { "id": "d_c4_v_6", "type": "strict", "q": "Traduisez : un journal et un livre", "a": ["en tidning och en bok"] },
+          
+          { "type": "card", "fr": "Genre du journal", "sv": "en tidning", "article": "" },
+          { "id": "d_c4_v_7", "type": "qcm", "q": "Quel article porte le mot 'tidning' ?", "options": ["ett", "en", "är"], "a": "en" },
+          { "id": "d_c4_v_8", "type": "strict", "q": "Traduisez : un homme et un livre", "a": ["en man och en bok"] },
+          
+          { "type": "card", "fr": "Lecture combinée", "sv": "tidning och bok", "article": "" },
+          { "id": "d_c4_v_9", "type": "qcm", "q": "Que signifie 'en kvinna och en tidning' ?", "options": ["une femme et un journal", "un homme et un livre"], "a": "une femme et un journal" },
+          { "id": "d_c4_v_10", "type": "strict", "q": "Traduisez : un enfant et un journal", "a": ["ett barn och en tidning"] }
+        ],
+        "grammar": [
+          { "type": "card", "title": "Le verbe Lire", "text": "En suédois, lire au présent se dit toujours <b>läser</b>." },
+          { "id": "d_c4_g_1", "type": "qcm", "q": "Que signifie le verbe 'läser' ?", "options": ["dormir", "manger", "lire"], "a": "lire" },
+          { "id": "d_c4_g_2", "type": "strict", "q": "Traduisez : Je lis", "a": ["Jag läser"] },
+          
+          { "type": "card", "title": "Le verbe Dormir", "text": "En suédois, dormir au présent se dit toujours <b>sover</b>." },
+          { "id": "d_c4_g_3", "type": "qcm", "q": "Que signifie le verbe 'sover' ?", "options": ["boire", "dormir", "lire"], "a": "dormir" },
+          { "id": "d_c4_g_4", "type": "strict", "q": "Traduisez : Tu dors", "a": ["Du sover"] },
+          
+          { "type": "card", "title": "Dormir au masculin", "text": "Pour exprimer qu'il dort, on utilise : <b>Han sover</b>." },
+          { "id": "d_c4_g_5", "type": "strict", "q": "Traduisez : Il dort", "a": ["Han sover"] },
+          { "id": "d_c4_g_6", "type": "strict", "q": "Traduisez : Elle lit", "a": ["Hon läser"] },
+          
+          { "type": "card", "title": "Le sommeil de l'enfant", "text": "Pour dire qu'un enfant dort, on écrit : <b>ett barn sover</b>." },
+          { "id": "d_c4_g_7", "type": "qcm", "q": "Traduisez 'un enfant dort' :", "options": ["ett barn sover", "ett barn läser", "en man sover"], "a": "ett barn sover" },
+          { "id": "d_c4_g_8", "type": "strict", "q": "Traduisez : un homme lit", "a": ["en man läser"] },
+          
+          { "type": "card", "title": "Le sommeil de la femme", "text": "Pour dire qu'une femme dort, on écrit : <b>en kvinna sover</b>." },
+          { "id": "d_c4_g_9", "type": "strict", "q": "Traduisez : une femme dort", "a": ["en kvinna sover"] },
+          { "id": "d_c4_g_10", "type": "qcm", "q": "Complétez : 'Du ___ en bok' (Tu lis un livre)", "options": ["sover", "läser", "har"], "a": "läser" }
+        ],
+        "reading": [
+          { "id": "d_c4_r_1", "type": "qcm", "context": "En man läser en bok.", "q": "Que fait l'homme dans cette scène ?", "options": ["Il dort", "Il lit un livre", "Il mange"], "a": "Il lit un livre" },
+          { "id": "d_c4_r_2", "type": "strict", "context": "En man läser en bok.", "q": "Quel support lit l'homme ?", "a": ["en bok", "bok"] },
+          { "id": "d_c4_r_3", "type": "qcm", "context": "En kvinna läser en tidning. Han sover.", "q": "Que fait l'homme ('Han') pendant que la femme lit ?", "options": ["Il lit aussi", "Il mange", "Il dort"], "a": "Il dort" },
+          { "id": "d_c4_r_4", "type": "strict", "context": "En kvinna läser en tidning.", "q": "Écrivez le mot pour 'journal' trouvé dans le texte :", "a": ["tidning"] },
+          { "id": "d_c4_r_5", "type": "qcm", "context": "Ett barn sover. En mamma läser en bok.", "q": "Que fait la mère ?", "options": ["Elle dort", "Elle lit un livre", "Elle mange un pain"], "a": "Elle lit un livre" },
+          { "id": "d_c4_r_6", "type": "strict", "context": "Ett barn sover.", "q": "Écrivez le verbe de cette courte phrase :", "a": ["sover"] },
+          { "id": "d_c4_r_7", "type": "qcm", "context": "Jag sover och du läser.", "q": "Quelle action faites-vous ('Jag') ?", "options": ["Dormir", "Lire", "Boire"], "a": "Dormir" },
+          { "id": "d_c4_r_8", "type": "strict", "context": "Du läser en tidning.", "q": "Traduisez cette phrase complète :", "a": ["tu lis un journal"] },
+          { "id": "d_c4_r_9", "type": "qcm", "context": "Hon har en bok och han läser.", "q": "Qui possède le livre au départ ?", "options": ["L'homme", "La femme (Hon)", "L'enfant"], "a": "La femme (Hon)" },
+          { "id": "d_c4_r_10", "type": "strict", "context": "Hejdå! Han sover.", "q": "Traduisez la fin : 'Han sover'", "a": ["il dort"] }
+        ],
+        "review": [
+          { "id": "d_c4_w_1", "type": "qcm", "q": "Révision globale : 'en tidning' est...", "options": ["un journal", "un livre"], "a": "un journal" },
+          { "id": "d_c4_w_2", "type": "strict", "q": "Révision globale : Écrivez 'un livre'", "a": ["en bok"] },
+          { "id": "d_c4_w_3", "type": "qcm", "q": "Révision globale : 'sover' veut dire...", "options": ["lire", "dormir"], "a": "dormir" },
+          { "id": "d_c4_w_4", "type": "strict", "q": "Révision globale : Écrivez 'Elle lit'", "a": ["Hon läser"] },
+          { "id": "d_c4_w_5", "type": "qcm", "q": "Révision globale : 'en man sover' signifie...", "options": ["un homme dort", "un homme lit"], "a": "un homme dort" },
+          { "id": "d_c4_w_6", "type": "strict", "q": "Phrase complète : Écrivez 'Je lis un livre'", "a": ["Jag läser en bok"], "hard": true },
+          { "id": "d_c4_w_7", "type": "strict", "q": "Phrase complète : Écrivez 'Un enfant lit un journal'", "a": ["ett barn läser en tidning"], "hard": true },
+          { "id": "d_c4_w_8", "type": "strict", "q": "Phrase complète : Écrivez 'Tu dors et je lis'", "a": ["Du sover och jag läser"], "hard": true },
+          { "id": "d_c4_w_9", "type": "strict", "q": "Phrase complète : Écrivez 'Une mère lit et un père dort'", "a": ["en mamma läser och en pappa sover"], "hard": true },
+          { "id": "d_c4_w_10", "type": "strict", "q": "Phrase complète : Écrivez 'Il mange un pain et lit un livre'", "a": ["Han äter ett bröd och läser en bok"], "hard": true }
+        ]
+      }
+    },
+    {
+      "chapterId": "c5",
+      "title": "Chapitre 5 : Les Objets de la Maison",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "fr": "Une table", "sv": "bord", "article": "ett" },
+          { "id": "d_c5_v_1", "type": "qcm", "q": "Comment dit-on 'une table' ?", "options": ["en stol", "ett bord", "en bok"], "a": "ett bord" },
+          { "id": "d_c5_v_2", "type": "strict", "q": "Traduisez : une table", "a": ["ett bord"] },
+          
+          { "type": "card", "fr": "Une chaise", "sv": "stol", "article": "en" },
+          { "id": "d_c5_v_3", "type": "qcm", "q": "Comment dit-on 'une chaise' ?", "options": ["ett bord", "en stol", "en tidning"], "a": "en stol" },
+          { "id": "d_c5_v_4", "type": "strict", "q": "Traduisez : une chaise", "a": ["en stol"] },
+          
+          { "type": "card", "fr": "Genre du meuble table", "sv": "ett bord", "article": "" },
+          { "id": "d_c5_v_5", "type": "qcm", "q": "Quel article accompagne le mot 'bord' ?", "options": ["en", "ett", "är"], "a": "ett" },
+          { "id": "d_c5_v_6", "type": "strict", "q": "Traduisez : une table et une chaise", "a": ["ett bord och en stol"] },
+          
+          { "type": "card", "fr": "Genre du meuble chaise", "sv": "en stol", "article": "" },
+          { "id": "d_c5_v_7", "type": "qcm", "q": "Quel article accompagne le mot 'stol' ?", "options": ["ett", "en", "och"], "a": "en" },
+          { "id": "d_c5_v_8", "type": "strict", "q": "Traduisez : un livre et une chaise", "a": ["en bok och en stol"] },
+          
+          { "type": "card", "fr": "Mobilier et lecture", "sv": "bord och tidning", "article": "" },
+          { "id": "d_c5_v_9", "type": "qcm", "q": "Que signifie 'ett bord och en tidning' ?", "options": ["une table et un journal", "un livre et une chaise"], "a": "une table et un journal" },
+          { "id": "d_c5_v_10", "type": "strict", "q": "Traduisez : un enfant et une chaise", "a": ["ett barn och en stol"] }
+        ],
+        "grammar": [
+          { "type": "card", "title": "Le verbe Voir", "text": "En suédois, voir au présent se traduit par <b>ser</b>." },
+          { "id": "d_c5_g_1", "type": "qcm", "q": "Que signifie le verbe 'ser' ?", "options": ["avoir", "voir", "lire"], "a": "voir" },
+          { "id": "d_c5_g_2", "type": "strict", "q": "Traduisez : Je vois", "a": ["Jag ser"] },
+          
+          { "type": "card", "title": "Vision à la deuxième personne", "text": "Pour dire 'Tu vois', on écrit simplement : <b>Du ser</b>." },
+          { "id": "d_c5_g_3", "type": "strict", "q": "Traduisez : Tu vois", "a": ["Du ser"] },
+          { "id": "d_c5_g_4", "type": "strict", "q": "Traduisez : Il voit", "a": ["Han ser"] },
+          
+          { "type": "card", "title": "Vision au féminin", "text": "Pour dire 'Elle voit', on associe le pronom et le verbe : <b>Hon ser</b>." },
+          { "id": "d_c5_g_5", "type": "strict", "q": "Traduisez : Elle voit", "a": ["Hon ser"] },
+          { "id": "d_c5_g_6", "type": "qcm", "q": "Traduisez 'un homme voit' :", "options": ["en man ser", "en man sover", "en kvinna ser"], "a": "en man ser" },
+          
+          { "type": "card", "title": "Vision par un adulte", "text": "Quand un sujet nominal comme 'une femme' voit, on écrit : <b>en kvinna ser</b>." },
+          { "id": "d_c5_g_7", "type": "strict", "q": "Traduisez : une femme voit", "a": ["en kvinna ser"] },
+          { "id": "d_c5_g_8", "type": "strict", "q": "Traduisez : un enfant voit", "a": ["ett barn ser"] },
+          
+          { "type": "card", "title": "Vision d'un meuble", "text": "Pour exprimer l'action de regarder un meuble, on emploie <b>ser</b> suivi de l'objet." },
+          { "id": "d_c5_g_9", "type": "qcm", "q": "Complétez : 'Jag ___ ett bord' (Je vois une table)", "options": ["läser", "ser", "har"], "a": "ser" },
+          { "id": "d_c5_g_10", "type": "strict", "q": "Traduisez l'affirmation : Je vois une chaise", "a": ["Jag ser en stol"] }
+        ],
+        "reading": [
+          { "id": "d_c5_r_1", "type": "qcm", "context": "Jag ser ett bord.", "q": "Qu'est-ce que je vois ?", "options": ["Une chaise", "Une table", "Un journal"], "a": "Une table" },
+          { "id": "d_c5_r_2", "type": "strict", "context": "Jag ser ett bord.", "q": "Écrivez le verbe présent dans cette phrase :", "a": ["ser"] },
+          { "id": "d_c5_r_3", "type": "qcm", "context": "En kvinna ser en stol. Han sover.", "q": "Que voit la femme ?", "options": ["Un livre", "Une chaise", "Une table"], "a": "Une chaise" },
+          { "id": "d_c5_r_4", "type": "strict", "context": "En kvinna ser en stol.", "q": "Écrivez l'objet de forme indéfinie vu par la femme :", "a": ["en stol", "stol"] },
+          { "id": "d_c5_r_5", "type": "qcm", "context": "Du ser ett bord och en stol.", "q": "Combien d'objets vois-tu ?", "options": ["Un seul", "Deux objets", "Aucun"], "a": "Deux objets" },
+          { "id": "d_c5_r_6", "type": "strict", "context": "Du ser ett bord.", "q": "Quel mot signifie 'Tu' ?", "a": ["Du"] },
+          { "id": "d_c5_r_7", "type": "qcm", "context": "Han ser en bok.", "q": "Que voit l'homme ?", "options": ["Un journal", "Un livre", "Une table"], "a": "Un livre" },
+          { "id": "d_c5_r_8", "type": "strict", "context": "Ett barn ser en mamma.", "q": "Qui voit l'enfant ?", "options": ["Un père", "Une mère", "Un homme"], "a": "Une mère" },
+          { "id": "d_c5_r_9", "type": "qcm", "context": "Hon har en stol och han ser.", "q": "Qui a la chaise ?", "options": ["La femme (Hon)", "L'homme", "L'enfant"], "a": "La femme (Hon)" },
+          { "id": "d_c5_r_10", "type": "strict", "context": "Hej! Jag ser en tidning.", "q": "Quel support papier est vu ici ?", "a": ["en tidning", "tidning"] }
+        ],
+        "review": [
+          { "id": "d_c5_w_1", "type": "qcm", "q": "Révision globale : 'ett bord' c'est...", "options": ["une table", "une chaise"], "a": "une table" },
+          { "id": "d_c5_w_2", "type": "strict", "q": "Révision globale : Écrivez 'une chaise'", "a": ["en stol"] },
+          { "id": "d_c5_w_3", "type": "qcm", "q": "Révision globale : Que signifie 'ser' ?", "options": ["manger", "voir"], "a": "voir" },
+          { "id": "d_c5_w_4", "type": "strict", "q": "Révision globale : Écrivez 'Il voit'", "a": ["Han ser"] },
+          { "id": "d_c5_w_5", "type": "qcm", "q": "Révision globale : 'Du ser ett barn' signifie...", "options": ["Tu vois un enfant", "Tu as un enfant"], "a": "Tu vois un enfant" },
+          { "id": "d_c5_w_6", "type": "strict", "q": "Phrase complète : Écrivez 'Je vois une table'", "a": ["Jag ser ett bord"], "hard": true },
+          { "id": "d_c5_w_7", "type": "strict", "q": "Phrase complète : Écrivez 'Une femme voit une table et une chaise'", "a": ["en kvinna ser ett bord och en stol"], "hard": true },
+          { "id": "d_c5_w_8", "type": "strict", "q": "Phrase complète : Écrivez 'Un enfant a une chaise'", "a": ["ett barn har en stol"], "hard": true },
+          { "id": "d_c5_w_9", "type": "strict", "q": "Phrase complète : Écrivez 'Il voit un livre et une table'", "a": ["Han ser en bok och ett bord"], "hard": true },
+          { "id": "d_c5_w_10", "type": "strict", "q": "Phrase complète : Écrivez 'Tu as un journal et tu vois une chaise'", "a": ["Du har en tidning och du ser en stol"], "hard": true }
+        ]
+      }
+    },
+    {
+      "chapterId": "c6",
+      "title": "Chapitre 6 : Les Animaux Familiers",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "fr": "Un chat", "sv": "katt", "article": "en" },
+          { "id": "d_c6_v_1", "type": "qcm", "q": "Comment dit-on 'un chat' ?", "options": ["en hund", "en katt", "ett barn"], "a": "en katt" },
+          { "id": "d_c6_v_2", "type": "strict", "q": "Traduisez : un chat", "a": ["en katt"] },
+          
+          { "type": "card", "fr": "Un chien", "sv": "hund", "article": "en" },
+          { "id": "d_c6_v_3", "type": "qcm", "q": "Comment dit-on 'un chien' ?", "options": ["en katt", "en hund", "ett bord"], "a": "en hund" },
+          { "id": "d_c6_v_4", "type": "strict", "q": "Traduisez : un chien", "a": ["en hund"] },
+          
+          { "type": "card", "fr": "Genre du félin", "sv": "en katt", "article": "" },
+          { "id": "d_c6_v_5", "type": "qcm", "q": "Quel article porte le mot 'katt' ?", "options": ["en", "ett", "och"], "a": "en" },
+          { "id": "d_c6_v_6", "type": "strict", "q": "Traduisez : un chat et un chien", "a": ["en katt och en hund"] },
+          
+          { "type": "card", "fr": "Genre du canidé", "sv": "en hund", "article": "" },
+          { "id": "d_c6_v_7", "type": "qcm", "q": "Quel article porte le mot 'hund' ?", "options": ["ett", "en", "är"], "a": "en" },
+          { "id": "d_c6_v_8", "type": "strict", "q": "Traduisez : un homme et un chien", "a": ["en man och en hund"] },
+          
+          { "type": "card", "fr": "Animaux et humains", "sv": "kvinna och katt", "article": "" },
+          { "id": "d_c6_v_9", "type": "qcm", "q": "Que signifie 'en kvinna och en katt' ?", "options": ["une femme et un chat", "un homme et un chien"], "a": "une femme et un chat" },
+          { "id": "d_c6_v_10", "type": "strict", "q": "Traduisez : un enfant et un chat", "a": ["ett barn och en katt"] }
+        ],
+        "grammar": [
+          { "type": "card", "title": "Le verbe Aimer", "text": "Pour exprimer qu'on apprécie ou qu'on aime quelque chose au présent, on utilise <b>gillar</b>." },
+          { "id": "d_c6_g_1", "type": "qcm", "q": "Que signifie le verbe 'gillar' ?", "options": ["manger", "aimer", "voir"], "a": "aimer" },
+          { "id": "d_c6_g_2", "type": "strict", "q": "Traduisez le pronom et le verbe : J'aime", "a": ["Jag gillar"] },
+          
+          { "type": "card", "title": "Appréciation à la deuxième personne", "text": "Pour dire 'Tu aimes', on écrit le pronom suivi de la forme invariable : <b>Du gillar</b>." },
+          { "id": "d_c6_g_3", "type": "strict", "q": "Traduisez : Tu aimes", "a": ["Du gillar"] },
+          { "id": "d_c6_g_4", "type": "strict", "q": "Traduisez : Il aime", "a": ["Han gillar"] },
+          
+          { "type": "card", "title": "Appréciation au féminin", "text": "Pour dire 'Elle aime', on écrit : <b>Hon gillar</b>." },
+          { "id": "d_c6_g_5", "type": "strict", "q": "Traduisez : Elle aime", "a": ["Hon gillar"] },
+          { "id": "d_c6_g_6", "type": "qcm", "q": "Traduisez 'un enfant aime' :", "options": ["ett barn gillar", "ett barn ser", "en man gillar"], "a": "ett barn gillar" },
+          
+          { "type": "card", "title": "Sujet nominal masculin", "text": "Quand le sujet est un homme qui aime, on écrit : <b>en man gillar</b>." },
+          { "id": "d_c6_g_7", "type": "strict", "q": "Traduisez : un homme aime", "a": ["en man gillar"] },
+          { "id": "d_c6_g_8", "type": "strict", "q": "Traduisez : une femme aime", "a": ["en kvinna gillar"] },
+          
+          { "type": "card", "title": "Aimer un animal", "text": "On place le verbe <b>gillar</b> directement devant l'animal à l'article indéfini." },
+          { "id": "d_c6_g_9", "type": "qcm", "q": "Complétez : 'Jag ___ en hund' (J'aime un chien)", "options": ["äter", "gillar", "sover"], "a": "gillar" },
+          { "id": "d_c6_g_10", "type": "strict", "q": "Traduisez : Tu aimes un chat", "a": ["Du gillar en katt"] }
+        ],
+        "reading": [
+          { "id": "d_c6_r_1", "type": "qcm", "context": "Jag gillar en katt.", "q": "Quel animal est-ce que j'aime ?", "options": ["Un chien", "Un chat", "Un enfant"], "a": "Un chat" },
+          { "id": "d_c6_r_2", "type": "strict", "context": "Jag gillar en katt.", "q": "Écrivez le verbe présent dans ce texte :", "a": ["gillar"] },
+          { "id": "d_c6_r_3", "type": "qcm", "context": "En kvinna gillar en hund. Han sover.", "q": "Quel animal apprécie la femme ?", "options": ["Un chat", "Un chien", "Une pomme"], "a": "Un chien" },
+          { "id": "d_c6_r_4", "type": "strict", "context": "En kvinna gillar en hund.", "q": "Écrivez le nom de l'animal présent ici :", "a": ["hund", "en hund"] },
+          { "id": "d_c6_r_5", "type": "qcm", "context": "Ett barn gillar en katt och en hund.", "q": "Quels animaux l'enfant aime-t-il ?", "options": ["Seulement un chat", "Seulement un chien", "Un chat et un chien"], "a": "Un chat et un chien" },
+          { "id": "d_c6_r_6", "type": "strict", "context": "Du gillar en hund.", "q": "Traduisez cette phrase courte :", "a": ["tu aimes un chien"] },
+          { "id": "d_c6_r_7", "type": "qcm", "context": "Han ser en katt. Hon gillar en hund.", "q": "Qui aime un chien ?", "options": ["L'homme", "La femme (Hon)", "L'enfant"], "a": "La femme (Hon)" },
+          { "id": "d_c6_r_8", "type": "strict", "context": "En man gillar en katt.", "q": "Qui aime un chat ?", "options": ["Une femme", "Un homme", "Un enfant"], "a": "Un homme" },
+          { "id": "d_c6_r_9", "type": "qcm", "context": "Hon har en katt.", "q": "Quel verbe exprime la possession ici ?", "options": ["gillar", "har", "är"], "a": "har" },
+          { "id": "d_c6_r_10", "type": "strict", "context": "Hejdå en hund!", "q": "Traduisez le nom de l'animal : 'en hund'", "a": ["un chien"] }
+        ],
+        "review": [
+          { "id": "d_c6_w_1", "type": "qcm", "q": "Révision globale : 'en katt' est...", "options": ["un chat", "un chien"], "a": "un chat" },
+          { "id": "d_c6_w_2", "type": "strict", "q": "Révision globale : Écrivez 'un chien'", "a": ["en hund"] },
+          { "id": "d_c6_w_3", "type": "qcm", "q": "Révision globale : Que signifie 'gillar' ?", "options": ["voir", "aimer"], "a": "aimer" },
+          { "id": "d_c6_w_4", "type": "strict", "q": "Révision globale : Écrivez 'Je vois un chat'", "a": ["Jag ser en katt"] },
+          { "id": "d_c6_w_5", "type": "qcm", "q": "Révision globale : 'Han gillar ett barn' signifie...", "options": ["Il aime un enfant", "Il a un enfant"], "a": "Il aime un enfant" },
+          { "id": "d_c6_w_6", "type": "strict", "q": "Phrase complète : Écrivez 'J'aime un chien'", "a": ["Jag gillar en hund"], "hard": true },
+          { "id": "d_c6_w_7", "type": "strict", "q": "Phrase complète : Écrivez 'Une femme a un chat et aime un chien'", "a": ["en kvinna har en katt och gillar en hund"], "hard": true },
+          { "id": "d_c6_w_8", "type": "strict", "q": "Phrase complète : Écrivez 'Un homme aime un chat'", "a": ["en man gillar en katt"], "hard": true },
+          { "id": "d_c6_w_9", "type": "strict", "q": "Phrase complète : Écrivez 'Un enfant voit un chien et un chat'", "a": ["ett barn ser en hund och en katt"], "hard": true },
+          { "id": "d_c6_w_10", "type": "strict", "q": "Phrase complète : Écrivez 'Tu aimes un chat et je mange un pain'", "a": ["Du gillar en katt och jag äter ett bröd"], "hard": true }
+        ]
+      }
+    }
+  ],
+  "intermediaire": [],
+  "avance": []
+}

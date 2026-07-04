@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Svenska Mobile Pro - V2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="header-left">
+        <img src="https://flagcdn.com/w80/se.png" class="flag-main" alt="Suède">
+        <div class="level-dropdown">
+            <div class="level-current" onclick="toggleLevelMenu()">Débutant ▾</div>
+            <div class="level-menu" id="level-menu">
+                <button onclick="selectLevel('Débutant')">Débutant</button>
+                <button onclick="selectLevel('Intermédiaire')">Intermédiaire</button>
+                <button onclick="selectLevel('Avancé')">Avancé</button>
+            </div>
+        </div>
+    </div>
+    <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="global-points-badge" id="points-badge">💎 <span id="global-points-val">0</span> pts</div>
+        <button class="hub-btn" onclick="openHub()">Hub Révision</button>
+    </div>
+</header>
+
+<main class="main-content" id="chapters-root"></main>
+
+<div class="custom-modal-backdrop" id="abort-modal">
+    <div class="custom-modal">
+        <h3>Quitter l'exercice ?</h3>
+        <p>Les points accumulés durant cette session ne seront pas comptabilisés.</p>
+        <div class="modal-actions">
+            <button class="modal-btn cancel" onclick="closeAbortModal()">Continuer</button>
+            <button class="modal-btn confirm" onclick="confirmAbortLesson()">Quitter</button>
+        </div>
+    </div>
+</div>
+
+<div class="lesson-overlay" id="lesson-layer">
+    <div class="lesson-header">
+        <button class="close-lesson" onclick="triggerAbortModal()">&times;</button>
+        <div class="progress-container"><div class="progress-bar" id="p-bar"></div></div>
+    </div>
+    <div class="lesson-body" id="l-body"></div>
+    <div class="footer-action">
+        <button class="action-btn" id="l-action" onclick="handleValidation()">Valider</button>
+    </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
