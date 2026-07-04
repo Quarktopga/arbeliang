@@ -34,7 +34,7 @@ header { background: var(--card-bg); height: 65px; padding: 0 16px; display: fle
 .modal-btn { flex: 1; padding: 14px; border: none; border-radius: 16px; font-size: 15px; font-weight: 700; cursor: pointer; }
 .modal-btn.cancel { background: #f1f5f9; color: #475569; }
 .modal-btn.confirm { background: var(--error); color: white; }
-.lesson-overlay { position: fixed; top:0; left:0; width:110vw; height:95vh; background: white; z-index: 50; display: none; flex-direction: column; }
+.lesson-overlay { position: fixed; top:0; left:0; width:100vw; height:95vh; background: white; z-index: 50; display: none; flex-direction: column; }
 .lesson-header { height: 65px; padding: 0 16px; display: flex; align-items: center; border-bottom: 1px solid #f1f5f9; }
 .close-lesson { font-size: 32px; background: none; border: none; cursor: pointer; color: #94a3b8; padding-right: 15px; }
 .progress-container { flex-grow: 1; height: 12px; background: #e2e8f0; border-radius: 6px; overflow: hidden; }
