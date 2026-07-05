@@ -99,12 +99,32 @@ function playMilestoneSound(level){
   beep(map[level] || [659,784], 0.13, 'triangle', 0.16);
 }
 function hapticStrong(){
-  if(navigator.vibrate) navigator.vibrate([40, 30, 60]);
+  if(navigator.vibrate) navigator.vibrate([90, 40, 110]);
 }
 function hapticMilestone(level){
   if(!navigator.vibrate) return;
-  const patterns = {5:[30],10:[40,20,40],25:[50,30,50,30,50],50:[60,30,60,30,60,30,80],100:[80,40,80,40,80,40,80,40,120]};
-  navigator.vibrate(patterns[level] || [40]);
+  const patterns = {5:[60],10:[70,30,70],25:[90,40,90,40,90],50:[100,40,100,40,100,40,130],100:[120,50,120,50,120,50,120,50,180]};
+  navigator.vibrate(patterns[level] || [70]);
+}
+
+function showModal(msg, opts={}){
+  const { confirmLabel='OK', cancelLabel=null } = opts;
+  return new Promise(resolve=>{
+    const overlay = document.createElement('div');
+    overlay.className = 'modal-overlay';
+    overlay.innerHTML = `
+      <div class="modal-box pop">
+        <p>${escapeHtml(msg)}</p>
+        <div class="modal-actions">
+          ${cancelLabel ? `<button class="btn-secondary" id="modalCancel">${escapeHtml(cancelLabel)}</button>` : ''}
+          <button class="btn-primary" id="modalOk">${escapeHtml(confirmLabel)}</button>
+        </div>
+      </div>`;
+    document.body.appendChild(overlay);
+    document.getElementById('modalOk').addEventListener('click', ()=>{ overlay.remove(); resolve(true); });
+    const cancelBtn = document.getElementById('modalCancel');
+    if(cancelBtn) cancelBtn.addEventListener('click', ()=>{ overlay.remove(); resolve(false); });
+  });
 }
 
 /* ---------- Data loading ---------- */
@@ -205,29 +225,6 @@ hubBtn.addEventListener('click', ()=>{
   route();
 });
 
-/* Fenêtres modales */
-function showModal(msg, {confirmLabel='OK', cancelLabel=null} = {}){
-  return new Promise(resolve=>{
-    const overlay = document.createElement('div');
-    overlay.className = 'modal-overlay';
-    overlay.innerHTML = `<div class="modal-box"><p>${escapeHtml(msg)}</p>
-      <div class="modal-actions">
-        ${cancelLabel ? `<button class="btn-secondary" id="mCancel">${cancelLabel}</button>` : ''}
-        <button class="btn-primary" id="mOk">${confirmLabel}</button>
-      </div></div>`;
-    document.body.appendChild(overlay);
-    document.getElementById('mOk').onclick = ()=>{overlay.remove(); resolve(true);};
-    const c = document.getElementById('mCancel');
-    if(c) c.onclick = ()=>{overlay.remove(); resolve(false);};
-  });
-}
-/* Alternatives */
-function normalizeStr(s){
-  return s.trim().toLowerCase()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
-    .replace(/[.,!?]+$/,'')
-    .replace(/\s+/g,' ');
-}
 /* ---------- Progress helpers ---------- */
 function getProgress(lang, level){
   const langP = ensurePath(STATE.progress, lang);
@@ -490,7 +487,7 @@ async function runHubLesson(lang, hubType){
   }
 
   if(exercises.length === 0){
-   await showModal('Rien à réviser pour le moment !');
+    await showModal('Rien à réviser pour le moment !');
     return;
   }
 
@@ -550,9 +547,12 @@ function renderLessonShell(title){
     </div>
   `;
   document.getElementById('closeLesson').addEventListener('click', async ()=>{
-  const ok = await showModal('Quitter la leçon ? Ta progression ne sera pas comptabilisée.', {confirmLabel:'Quitter', cancelLabel:'Annuler'});
-  if(ok){ setParams({ chapter:null, lesson:null, view:null }); route(); }
-});
+    const ok = await showModal('Quitter la leçon ? Ta progression sur cette leçon ne sera pas comptabilisée.', { confirmLabel: 'Quitter', cancelLabel: 'Annuler' });
+    if(ok){
+      setParams({ chapter: null, lesson: null, view: null });
+      route();
+    }
+  });
   updateStreakLine();
 }
 
@@ -661,8 +661,10 @@ function renderGrammarCard(ex){
 function renderQuestion(ex){
   const zone = document.getElementById('exoZone');
   const kindClass = exoCardKindClass(ex);
-  const tagLabel = (ex.hard ? '⚡ Difficile' : (kindClass==='kind-grammar'?'🏛️ Grammaire':kindClass==='kind-vocab'?'🌿 Vocabulaire':'📘 Question'))
-  + (ex._isRetry ? '<span class="tag-mistake">Erreur à corriger</span>' : '');
+  let tagLabel = ex.hard ? '⚡ Difficile' : (kindClass==='kind-grammar' ? '🏛️ Grammaire' : kindClass==='kind-vocab' ? '🌿 Vocabulaire' : '📘 Question');
+  if(ex._isRetry) tagLabel += '<span class="tag-mistake">Erreur à corriger</span>';
+
+  const ctxHtml = ex.ctx ? `<div class="context-box">${escapeHtml(ex.ctx)}</div>` : '';
 
   let bodyHtml = '';
   if(ex.type === 'qcm'){
@@ -677,6 +679,7 @@ function renderQuestion(ex){
   zone.innerHTML = `
     <div class="exo-card ${kindClass} pop" id="exoCardEl">
       <div class="exo-tag">${tagLabel}</div>
+      ${ctxHtml}
       <div class="exo-q">${escapeHtml(ex.q)}</div>
       ${bodyHtml}
       <div class="action-row">
@@ -761,8 +764,10 @@ function wireSpecialChars(input){
 
 function normalizeStr(s){
   return s.trim().toLowerCase()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // strip accents for leniency? keep target orthography loosely
-    .replace(/\s+/g, ' ');
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // tolère les accents manquants
+    .replace(/[.,!?;:]+$/g, '')                        // tolère la ponctuation finale
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function handleAnswer(ex, isCorrect, userAnswer){

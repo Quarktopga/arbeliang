@@ -384,7 +384,7 @@ h1,h2,h3,p{margin:0;}
 }
 .card-fr{color:#6b6459; font-weight:600; font-size:0.95rem; margin-bottom:10px;}
 .card-target{font-size:2rem; font-weight:700; color:var(--moss-dark);}
-.card-hint{margin-top:16px; font-size:1rem; color:#c1503a;}
+.card-hint{margin-top:16px; font-size:0.88rem; color:#7a7368;}
 
 .gcard-title{font-size:1.15rem; font-weight:700; margin-bottom:12px; color:var(--ink);}
 .gcard-content{font-size:1rem; line-height:1.65; white-space:pre-line; color:#3a473f;}
@@ -550,30 +550,146 @@ body.flash-gold{animation:flashGold 0.9s ease;}
 
 ::selection{background:#c9e6cf;}
 
-
-/*Ajouts des touches caractères spéciaux + fenêtres modales*/
-.special-chars-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+/* ============ SPECIAL CHARS ROW ============ */
+.special-chars-row{
+  display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;
+}
 .special-char-btn{
   border:2px solid var(--ink); background:#fff; border-radius:10px;
-  padding:6px 12px; font-size:1.1rem; font-weight:600; cursor:pointer;
-  box-shadow:var(--shadow-sm); color:var(--moss-dark);
+  padding:6px 13px; font-size:1.1rem; font-weight:600; cursor:pointer;
+  font-family:'Fredoka', sans-serif; color:var(--moss-dark);
+  box-shadow:var(--shadow-sm); transition:transform .1s ease, background .15s ease;
 }
 .special-char-btn:hover{background:var(--blue);}
 .special-char-btn:active{transform:translateY(1px); box-shadow:none;}
 
+/* ============ CONTEXT BOX (reading) ============ */
 .context-box{
-  background:linear-gradient(160deg,#fffdf8,#f3ecd9);
-  border:2px solid var(--gold-dark); border-radius:var(--radius);
-  padding:18px 20px; margin-bottom:18px; box-shadow:var(--shadow-sm);
-  font-size:1.05rem; line-height:1.6;
+  background:linear-gradient(160deg,#fffdf8,#f6efd8);
+  border:2px solid var(--gold-dark);
+  border-radius:var(--radius-sm);
+  padding:16px 18px;
+  margin-bottom:18px;
+  box-shadow:0 3px 0 rgba(169,122,31,0.18), 0 6px 14px rgba(169,122,31,0.10);
+  font-size:1.08rem;
+  font-weight:600;
+  line-height:1.55;
+  color:var(--moss-dark);
 }
-.context-word{border-bottom:1.5px dotted var(--moss-dark); cursor:help;}
-.tag-mistake{background:var(--rust); color:#fff; font-size:0.7rem; font-weight:700;
-  border-radius:999px; padding:2px 9px; margin-left:8px; text-transform:uppercase;}
 
-.modal-overlay{position:fixed;inset:0;background:rgba(22,36,31,.45);
-  display:flex;align-items:center;justify-content:center;z-index:300;}
-.modal-box{background:var(--panel);border:2.5px solid var(--ink);border-radius:var(--radius);
-  padding:26px;max-width:400px;box-shadow:var(--shadow);text-align:center;}
-.modal-box p{margin-bottom:20px;font-weight:500;}
-.modal-actions{display:flex;gap:10px;justify-content:center;}
+/* ============ MISTAKE TAG ============ */
+.tag-mistake{
+  background:var(--rust);
+  color:#fff;
+  font-size:0.68rem;
+  font-weight:700;
+  border-radius:999px;
+  padding:3px 10px;
+  margin-left:8px;
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  vertical-align:middle;
+}
+
+/* ============ MODAL ============ */
+.modal-overlay{
+  position:fixed; inset:0;
+  background:rgba(22,36,31,0.45);
+  display:flex; align-items:center; justify-content:center;
+  z-index:300;
+  padding:20px;
+}
+.modal-box{
+  background:var(--panel);
+  border:2.5px solid var(--ink);
+  border-radius:var(--radius);
+  padding:28px 26px;
+  max-width:420px;
+  width:100%;
+  box-shadow:var(--shadow);
+  text-align:center;
+}
+.modal-box p{
+  margin-bottom:22px;
+  font-weight:600;
+  font-size:1.05rem;
+  line-height:1.5;
+  color:var(--ink);
+}
+.modal-actions{
+  display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+}
+
+/* ============ RESPONSIVE / MOBILE ============ */
+@media (max-width: 640px){
+  .topbar{
+    flex-wrap:wrap;
+    gap:8px;
+    padding:10px 12px;
+  }
+  .brand{font-size:1.05rem;}
+  .brand .leaf{font-size:1.15rem;}
+  .lang-level-group{order:3; width:100%; justify-content:space-between;}
+  .flag-btn{padding:5px 10px 5px 5px; font-size:0.85rem;}
+  .flag-emoji{font-size:1.1rem;}
+  .level-btn{padding:5px 10px; font-size:0.82rem;}
+  .topbar-right{gap:8px;}
+  .points-pill{padding:5px 10px; font-size:0.85rem;}
+  .hub-btn{padding:7px 12px; font-size:0.8rem;}
+  .hub-btn span:not(.badge){display:none;}
+  .dropdown{min-width:170px; font-size:0.9rem;}
+
+  .app{padding:18px 12px 60px;}
+  .page-title{font-size:1.3rem;}
+  .page-sub{font-size:0.88rem; margin-bottom:16px;}
+
+  .lesson-row{grid-template-columns:repeat(2,1fr); gap:8px;}
+  .lesson-node{padding:12px 8px;}
+  .lesson-node .node-icon{font-size:1.3rem;}
+  .lesson-node .node-label{font-size:0.78rem;}
+  .chapter-block{padding:14px;}
+  .chapter-title{font-size:1rem;}
+
+  .lesson-screen{padding:12px 10px 40px;}
+  .progress-wrap{padding:10px 0 8px;}
+  .streak-line{font-size:0.85rem;}
+  .progress-bar-outer{height:13px;}
+  .close-lesson{top:10px; font-size:1.1rem;}
+
+  .exo-card{padding:18px 14px; margin-top:18px;}
+  .exo-q{font-size:1.08rem; margin-bottom:16px;}
+  .context-box{padding:12px 14px; font-size:0.98rem;}
+  .option-btn{padding:11px 13px; font-size:0.95rem;}
+  .strict-input{padding:11px 12px; font-size:0.98rem;}
+  .special-char-btn{padding:5px 10px; font-size:1rem;}
+  .card-target{font-size:1.5rem;}
+  .card-fr{font-size:0.85rem;}
+  .gcard-title{font-size:1.02rem;}
+  .gcard-content{font-size:0.92rem;}
+
+  .action-row{margin-top:16px;}
+  .btn-validate{width:100%; padding:12px 20px; font-size:0.98rem; min-width:0;}
+
+  .end-screen{margin:30px auto; padding:28px 18px; max-width:92%;}
+  .end-emoji{font-size:3rem;}
+  .end-title{font-size:1.3rem;}
+  .end-score{font-size:2rem;}
+  .end-actions{flex-direction:column;}
+  .end-actions button{width:100%;}
+
+  .hub-grid{grid-template-columns:1fr; gap:12px;}
+  .hub-card{padding:16px;}
+
+  .modal-box{padding:22px 18px;}
+  .modal-actions{flex-direction:column;}
+  .modal-actions button{width:100%;}
+
+  .m-25{font-size:2rem;}
+  .m-50{font-size:2.6rem;}
+  .m-100{font-size:3.4rem;}
+}
+
+@media (max-width: 380px){
+  .lesson-row{grid-template-columns:1fr;}
+  .flag-btn span:not(.flag-emoji):not(.chev){display:none;}
+}
