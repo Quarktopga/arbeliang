@@ -1,0 +1,162 @@
+{
+  "debutant": [
+    {
+      "chapterId": "c1",
+      "title": "Chapitre 1 : Les Salutations & Mots de Base",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "id": "sv_c1_word_hej", "fr": "Bonjour", "target": "Hej" },
+          { "id": "sv_c1_v_1", "type": "qcm", "q": "Que signifie « Hej » ?", "options": ["Au revoir", "Bonjour", "Merci"], "a": "Bonjour" },
+          { "id": "sv_c1_v_2", "type": "strict", "q": "Traduisez : Bonjour", "a": ["Hej"] },
+
+          { "type": "card", "id": "sv_c1_word_hejda", "fr": "Au revoir", "target": "Hej då" },
+          { "id": "sv_c1_v_3", "type": "qcm", "q": "Que signifie « Hej då » ?", "options": ["Bonjour", "Au revoir", "S'il te plaît"], "a": "Au revoir" },
+          { "id": "sv_c1_v_4", "type": "strict", "q": "Traduisez : Au revoir", "a": ["Hej då"] },
+
+          { "type": "card", "id": "sv_c1_word_tack", "fr": "Merci", "target": "Tack" },
+          { "id": "sv_c1_v_5", "type": "qcm", "q": "Que signifie « Tack » ?", "options": ["Merci", "Pardon", "Bonjour"], "a": "Merci" },
+          { "id": "sv_c1_v_6", "type": "strict", "q": "Traduisez : Merci", "a": ["Tack"] },
+
+          { "type": "card", "id": "sv_c1_word_varsagod", "fr": "Je t'en prie / Voici", "target": "Varsågod" },
+          { "id": "sv_c1_v_7", "type": "qcm", "q": "Que signifie « Varsågod » ?", "options": ["Je t'en prie", "Excuse-moi", "Bonsoir"], "a": "Je t'en prie" },
+          { "id": "sv_c1_v_8", "type": "strict", "q": "Traduisez : Je t'en prie", "a": ["Varsågod"] },
+
+          { "type": "card", "id": "sv_c1_word_ja", "fr": "Oui", "target": "Ja" },
+          { "id": "sv_c1_v_9", "type": "qcm", "q": "Que signifie « Ja » ?", "options": ["Non", "Oui", "Peut-être"], "a": "Oui" },
+          { "id": "sv_c1_v_10", "type": "strict", "q": "Traduisez : Oui", "a": ["Ja"] },
+
+          { "type": "card", "id": "sv_c1_word_nej", "fr": "Non", "target": "Nej" },
+          { "id": "sv_c1_v_11", "type": "qcm", "q": "Que signifie « Nej » ?", "options": ["Oui", "Non", "Merci"], "a": "Non" },
+          { "id": "sv_c1_v_12", "type": "strict", "q": "Traduisez : Non", "a": ["Nej"] },
+
+          { "id": "sv_c1_v_13", "type": "qcm", "hard": true, "q": "Laquelle de ces paires est correcte (salutation / réponse) ?", "options": ["Hej / Hej då", "Tack / Varsågod", "Ja / Tack"], "a": "Tack / Varsågod" },
+          { "id": "sv_c1_v_14", "type": "strict", "q": "Traduisez : Non, merci", "a": ["Nej, tack"] },
+          { "id": "sv_c1_v_15", "type": "qcm", "q": "Comment dit-on « Bonjour » de façon informelle en suédois courant ?", "options": ["Hej", "God dag", "Hallå"], "a": "Hej" },
+          { "id": "sv_c1_v_16", "type": "strict", "hard": true, "q": "Traduisez : Oui, merci", "a": ["Ja, tack"] }
+        ],
+        "grammar": [
+          { "type": "gcard", "id": "sv_c1_g_card1", "title": "L'article indéfini", "content": "En suédois, il existe deux genres grammaticaux : le commun (en) et le neutre (ett). « en bok » (un livre), « ett hus » (une maison). Il n'y a pas de règle simple : il faut apprendre le genre avec chaque mot." },
+          { "id": "sv_c1_g_1", "type": "qcm", "q": "Quel article utilise-t-on pour « hus » (maison) ?", "options": ["en", "ett", "den"], "a": "ett" },
+          { "id": "sv_c1_g_2", "type": "qcm", "q": "Quel article utilise-t-on pour « bok » (livre) ?", "options": ["en", "ett", "de"], "a": "en" },
+
+          { "type": "gcard", "id": "sv_c1_g_card2", "title": "Le verbe « vara » (être)", "content": "« Vara » signifie être. Contrairement au français, il ne se conjugue pas selon la personne : Jag är (je suis), Du är (tu es), Han/Hon är (il/elle est), Vi är (nous sommes)." },
+          { "id": "sv_c1_g_3", "type": "strict", "q": "Traduisez : Je suis (utilisez 'vara')", "a": ["Jag är"] },
+          { "id": "sv_c1_g_4", "type": "qcm", "q": "Comment dit-on « tu es » ?", "options": ["Du är", "Jag är", "Vi är"], "a": "Du är" },
+          { "id": "sv_c1_g_5", "type": "strict", "hard": true, "q": "Traduisez : Nous sommes (utilisez 'vara')", "a": ["Vi är"] },
+
+          { "type": "gcard", "id": "sv_c1_g_card3", "title": "L'ordre des mots de base", "content": "L'ordre standard est Sujet-Verbe-Objet, comme en français : « Jag talar svenska » (Je parle suédois)." },
+          { "id": "sv_c1_g_6", "type": "qcm", "q": "Quel est l'ordre correct pour « Je parle suédois » ?", "options": ["Jag talar svenska", "Talar jag svenska", "Svenska jag talar"], "a": "Jag talar svenska" },
+          { "id": "sv_c1_g_7", "type": "strict", "q": "Traduisez : Il est (utilisez 'vara')", "a": ["Han är"] },
+          { "id": "sv_c1_g_8", "type": "qcm", "hard": true, "q": "Quelle phrase est grammaticalement correcte ?", "options": ["Hon är svensk", "Hon svensk är", "Är hon svensk (affirmatif)"], "a": "Hon är svensk" },
+          { "id": "sv_c1_g_9", "type": "strict", "q": "Traduisez : Elle est (utilisez 'vara')", "a": ["Hon är"] },
+          { "id": "sv_c1_g_10", "type": "qcm", "q": "Quel article pour « äpple » (pomme, neutre) ?", "options": ["en", "ett"], "a": "ett" }
+        ],
+        "reading": [
+          { "type": "gcard", "id": "sv_c1_r_intro", "title": "Compréhension : Une rencontre", "content": "Lisez le dialogue suivant :\n— Hej! Jag heter Anna.\n— Hej då! Nej, jag heter Erik.\n— Tack, Erik. Vi är vänner nu.\n\n(Traduction indicative : Bonjour, je m'appelle Anna. / Bonjour(?), non, je m'appelle Erik. / Merci Erik, nous sommes amis maintenant.)" },
+          { "id": "sv_c1_r_1", "type": "qcm", "q": "Comment s'appelle la première personne ?", "options": ["Anna", "Erik", "Lena"], "a": "Anna" },
+          { "id": "sv_c1_r_2", "type": "qcm", "q": "Que répond Erik après « Hej! » ?", "options": ["Hej då", "Tack", "Ja"], "a": "Hej då" },
+          { "id": "sv_c1_r_3", "type": "strict", "q": "D'après le dialogue, traduisez : je m'appelle (verbe seul)", "a": ["heter", "jag heter"] },
+          { "id": "sv_c1_r_4", "type": "qcm", "q": "Que veut dire « vänner » dans le contexte ?", "options": ["Amis", "Ennemis", "Voisins"], "a": "Amis" },
+          { "id": "sv_c1_r_5", "type": "qcm", "hard": true, "q": "Quel mot du dialogue signifie « maintenant » ?", "options": ["nu", "då", "än"], "a": "nu" },
+          { "id": "sv_c1_r_6", "type": "strict", "q": "Traduisez la phrase : Nous sommes amis", "a": ["Vi är vänner"] },
+          { "id": "sv_c1_r_7", "type": "qcm", "q": "Quel est le ton général du dialogue ?", "options": ["Formel et distant", "Amical et informel", "Conflictuel"], "a": "Amical et informel" },
+          { "id": "sv_c1_r_8", "type": "qcm", "q": "Qui remercie qui dans le dialogue ?", "options": ["Anna remercie Erik", "Erik remercie Anna", "Personne ne remercie"], "a": "Anna remercie Erik" },
+          { "id": "sv_c1_r_9", "type": "strict", "hard": true, "q": "Complétez d'après le dialogue : « Jag ___ Anna » (je m'appelle)", "a": ["heter"] },
+          { "id": "sv_c1_r_10", "type": "qcm", "q": "Combien de personnes parlent dans ce dialogue ?", "options": ["Une", "Deux", "Trois"], "a": "Deux" }
+        ],
+        "review": [
+          { "id": "sv_c1_rev_1", "type": "qcm", "q": "Que signifie « Hej » ?", "options": ["Au revoir", "Bonjour", "Merci"], "a": "Bonjour" },
+          { "id": "sv_c1_rev_2", "type": "strict", "q": "Traduisez : Merci", "a": ["Tack"] },
+          { "id": "sv_c1_rev_3", "type": "qcm", "q": "Quel article pour « hus » (maison) ?", "options": ["en", "ett"], "a": "ett" },
+          { "id": "sv_c1_rev_4", "type": "strict", "q": "Traduisez : Je suis", "a": ["Jag är"] },
+          { "id": "sv_c1_rev_5", "type": "qcm", "q": "Comment dit-on « Non » ?", "options": ["Ja", "Nej", "Tack"], "a": "Nej" },
+          { "id": "sv_c1_rev_6", "type": "strict", "hard": true, "q": "Traduisez la phrase : Nous sommes amis", "a": ["Vi är vänner"] },
+          { "id": "sv_c1_rev_7", "type": "qcm", "q": "Que signifie « Varsågod » ?", "options": ["Je t'en prie", "Bonsoir", "Excuse-moi"], "a": "Je t'en prie" },
+          { "id": "sv_c1_rev_8", "type": "strict", "q": "Traduisez : Au revoir", "a": ["Hej då"] },
+          { "id": "sv_c1_rev_9", "type": "qcm", "hard": true, "q": "Quelle est la structure correcte de phrase en suédois ?", "options": ["Sujet-Verbe-Objet", "Objet-Sujet-Verbe", "Verbe-Sujet-Objet"], "a": "Sujet-Verbe-Objet" },
+          { "id": "sv_c1_rev_10", "type": "strict", "q": "Traduisez : Oui, merci", "a": ["Ja, tack"] }
+        ]
+      }
+    },
+    {
+      "chapterId": "c2",
+      "title": "Chapitre 2 : La Famille & Les Nombres",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "id": "sv_c2_word_familj", "fr": "Famille", "target": "Familj" },
+          { "id": "sv_c2_v_1", "type": "qcm", "q": "Que signifie « Familj » ?", "options": ["Famille", "Ami", "Maison"], "a": "Famille" },
+          { "id": "sv_c2_v_2", "type": "strict", "q": "Traduisez : Famille", "a": ["Familj"] },
+
+          { "type": "card", "id": "sv_c2_word_mamma", "fr": "Maman", "target": "Mamma" },
+          { "id": "sv_c2_v_3", "type": "qcm", "q": "Que signifie « Mamma » ?", "options": ["Papa", "Maman", "Sœur"], "a": "Maman" },
+          { "id": "sv_c2_v_4", "type": "strict", "q": "Traduisez : Maman", "a": ["Mamma"] },
+
+          { "type": "card", "id": "sv_c2_word_pappa", "fr": "Papa", "target": "Pappa" },
+          { "id": "sv_c2_v_5", "type": "qcm", "q": "Que signifie « Pappa » ?", "options": ["Papa", "Maman", "Frère"], "a": "Papa" },
+          { "id": "sv_c2_v_6", "type": "strict", "q": "Traduisez : Papa", "a": ["Pappa"] },
+
+          { "type": "card", "id": "sv_c2_word_ett", "fr": "Un (1)", "target": "Ett" },
+          { "id": "sv_c2_v_7", "type": "qcm", "q": "Que signifie « Ett » ?", "options": ["Un", "Deux", "Trois"], "a": "Un" },
+          { "id": "sv_c2_v_8", "type": "strict", "q": "Traduisez le chiffre : Un", "a": ["Ett"] },
+
+          { "type": "card", "id": "sv_c2_word_tva", "fr": "Deux (2)", "target": "Två" },
+          { "id": "sv_c2_v_9", "type": "qcm", "q": "Que signifie « Två » ?", "options": ["Un", "Deux", "Quatre"], "a": "Deux" },
+          { "id": "sv_c2_v_10", "type": "strict", "q": "Traduisez le chiffre : Deux", "a": ["Två"] },
+
+          { "type": "card", "id": "sv_c2_word_tre", "fr": "Trois (3)", "target": "Tre" },
+          { "id": "sv_c2_v_11", "type": "qcm", "q": "Que signifie « Tre » ?", "options": ["Trois", "Cinq", "Deux"], "a": "Trois" },
+          { "id": "sv_c2_v_12", "type": "strict", "q": "Traduisez le chiffre : Trois", "a": ["Tre"] },
+
+          { "id": "sv_c2_v_13", "type": "qcm", "hard": true, "q": "Comment dirait-on « Ma famille » ? (indice : min = mon/ma)", "options": ["Min familj", "Familj min", "En familj"], "a": "Min familj" },
+          { "id": "sv_c2_v_14", "type": "strict", "q": "Traduisez : Un, deux, trois", "a": ["Ett, två, tre"] },
+          { "id": "sv_c2_v_15", "type": "qcm", "q": "Quel mot désigne le père en suédois ?", "options": ["Mamma", "Pappa", "Familj"], "a": "Pappa" },
+          { "id": "sv_c2_v_16", "type": "strict", "hard": true, "q": "Traduisez : Maman et Papa", "a": ["Mamma och pappa"] }
+        ],
+        "grammar": [
+          { "type": "gcard", "id": "sv_c2_g_card1", "title": "Le pluriel simple", "content": "Beaucoup de noms communs (en-mots) forment leur pluriel en ajoutant -ar ou -or : en bil → bilar (des voitures), en flicka → flickor (des filles)." },
+          { "id": "sv_c2_g_1", "type": "qcm", "q": "Quel est le pluriel probable de « en bil » (voiture) ?", "options": ["bilar", "bilor", "biler"], "a": "bilar" },
+          { "id": "sv_c2_g_2", "type": "strict", "q": "Complétez : en flicka → flick___ (des filles)", "a": ["or"] },
+
+          { "type": "gcard", "id": "sv_c2_g_card2", "title": "Les adjectifs possessifs", "content": "Min/mitt (mon/ma) s'accorde avec le genre : min bok (en-mot), mitt hus (ett-mot). Din/ditt fonctionne pareil pour « ton/ta »." },
+          { "id": "sv_c2_g_3", "type": "qcm", "q": "Quelle forme utiliser avec « hus » (ett-mot) ?", "options": ["min hus", "mitt hus", "mina hus"], "a": "mitt hus" },
+          { "id": "sv_c2_g_4", "type": "strict", "q": "Traduisez : Mon livre (bok est un en-mot)", "a": ["Min bok"] },
+          { "id": "sv_c2_g_5", "type": "qcm", "hard": true, "q": "Quelle forme utiliser avec « äpple » (ett-mot) pour dire « ta pomme » ?", "options": ["din äpple", "ditt äpple", "dina äpple"], "a": "ditt äpple" },
+
+          { "type": "gcard", "id": "sv_c2_g_card3", "title": "Les nombres comme adjectifs", "content": "Les nombres précèdent toujours le nom, sans accord de genre : två bilar (deux voitures), tre hus (trois maisons)." },
+          { "id": "sv_c2_g_6", "type": "qcm", "q": "Comment dit-on « trois maisons » ?", "options": ["tre hus", "hus tre", "tre huser"], "a": "tre hus" },
+          { "id": "sv_c2_g_7", "type": "strict", "q": "Traduisez : Deux voitures (bil = voiture, pluriel bilar)", "a": ["Två bilar"] },
+          { "id": "sv_c2_g_8", "type": "qcm", "q": "Quelle phrase est correcte ?", "options": ["Min familj är stor", "Familj min är stor", "Är min familj stor (affirmatif)"], "a": "Min familj är stor" },
+          { "id": "sv_c2_g_9", "type": "strict", "hard": true, "q": "Traduisez : Ma famille est grande (stor = grand/grande)", "a": ["Min familj är stor"] },
+          { "id": "sv_c2_g_10", "type": "qcm", "q": "Quel est l'ordre correct pour « un livre » ?", "options": ["en bok", "bok en", "ett bok"], "a": "en bok" }
+        ],
+        "reading": [
+          { "type": "gcard", "id": "sv_c2_r_intro", "title": "Compréhension : Ma famille", "content": "Lisez le texte suivant :\nJag heter Lisa. Min familj är inte stor: mamma, pappa och jag. Vi är tre. Jag har också en katt. Ett, två, tre - vi är fyra med katten!\n\n(Indice : inte = ne...pas, har = a/possède, katt = chat, fyra = quatre)" },
+          { "id": "sv_c2_r_1", "type": "qcm", "q": "Comment s'appelle la personne qui parle ?", "options": ["Anna", "Lisa", "Erik"], "a": "Lisa" },
+          { "id": "sv_c2_r_2", "type": "qcm", "q": "Combien de personnes composent la famille (sans le chat) ?", "options": ["Deux", "Trois", "Quatre"], "a": "Trois" },
+          { "id": "sv_c2_r_3", "type": "strict", "q": "D'après le texte, traduisez : chat", "a": ["katt"] },
+          { "id": "sv_c2_r_4", "type": "qcm", "q": "Que signifie « inte » dans le texte ?", "options": ["ne...pas", "très", "aussi"], "a": "ne...pas" },
+          { "id": "sv_c2_r_5", "type": "qcm", "hard": true, "q": "Combien sont-ils en comptant le chat ?", "options": ["Trois", "Quatre", "Cinq"], "a": "Quatre" },
+          { "id": "sv_c2_r_6", "type": "strict", "q": "Traduisez la phrase du texte : Nous sommes trois", "a": ["Vi är tre"] },
+          { "id": "sv_c2_r_7", "type": "qcm", "q": "La famille de Lisa est-elle décrite comme grande ?", "options": ["Oui, elle est grande", "Non, elle n'est pas grande", "Ce n'est pas précisé"], "a": "Non, elle n'est pas grande" },
+          { "id": "sv_c2_r_8", "type": "qcm", "q": "Quel animal Lisa possède-t-elle ?", "options": ["Un chien", "Un chat", "Un oiseau"], "a": "Un chat" },
+          { "id": "sv_c2_r_9", "type": "strict", "hard": true, "q": "Complétez d'après le texte : « Jag har också en ___ » (chat)", "a": ["katt"] },
+          { "id": "sv_c2_r_10", "type": "qcm", "q": "Quel est le sujet principal du texte ?", "options": ["Les nombres", "La présentation de la famille de Lisa", "Les animaux domestiques en Suède"], "a": "La présentation de la famille de Lisa" }
+        ],
+        "review": [
+          { "id": "sv_c2_rev_1", "type": "qcm", "q": "Que signifie « Familj » ?", "options": ["Ami", "Famille", "Voisin"], "a": "Famille" },
+          { "id": "sv_c2_rev_2", "type": "strict", "q": "Traduisez : Papa", "a": ["Pappa"] },
+          { "id": "sv_c2_rev_3", "type": "qcm", "q": "Comment dit-on « trois » ?", "options": ["Ett", "Två", "Tre"], "a": "Tre" },
+          { "id": "sv_c2_rev_4", "type": "strict", "q": "Traduisez : Ma famille (bok-style, familj est un en-mot)", "a": ["Min familj"] },
+          { "id": "sv_c2_rev_5", "type": "qcm", "hard": true, "q": "Quelle forme possessive pour « hus » (ett-mot) ?", "options": ["min hus", "mitt hus"], "a": "mitt hus" },
+          { "id": "sv_c2_rev_6", "type": "strict", "q": "Traduisez : Deux voitures", "a": ["Två bilar"] },
+          { "id": "sv_c2_rev_7", "type": "qcm", "q": "Que signifie « katt » ?", "options": ["Chien", "Chat", "Oiseau"], "a": "Chat" },
+          { "id": "sv_c2_rev_8", "type": "strict", "q": "Traduisez : Nous sommes trois", "a": ["Vi är tre"] },
+          { "id": "sv_c2_rev_9", "type": "qcm", "hard": true, "q": "Quel est le pluriel de « en flicka » (fille) ?", "options": ["flickar", "flickor", "flickas"], "a": "flickor" },
+          { "id": "sv_c2_rev_10", "type": "qcm", "q": "Que signifie « inte » ?", "options": ["ne...pas", "toujours", "jamais"], "a": "ne...pas" }
+        ]
+      }
+    }
+  ],
+  "intermediaire": [],
+  "avance": []
+}

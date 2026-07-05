@@ -1,0 +1,162 @@
+{
+  "debutant": [
+    {
+      "chapterId": "c1",
+      "title": "Chapitre 1 : Les Salutations & Mots de Base",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "id": "ga_c1_word_dia", "fr": "Bonjour", "target": "Dia dhuit" },
+          { "id": "ga_c1_v_1", "type": "qcm", "q": "Que signifie « Dia dhuit » ?", "options": ["Au revoir", "Bonjour", "Merci"], "a": "Bonjour" },
+          { "id": "ga_c1_v_2", "type": "strict", "q": "Traduisez : Bonjour", "a": ["Dia dhuit"] },
+
+          { "type": "card", "id": "ga_c1_word_slan", "fr": "Au revoir", "target": "Slán" },
+          { "id": "ga_c1_v_3", "type": "qcm", "q": "Que signifie « Slán » ?", "options": ["Bonjour", "Au revoir", "S'il te plaît"], "a": "Au revoir" },
+          { "id": "ga_c1_v_4", "type": "strict", "q": "Traduisez : Au revoir", "a": ["Slán"] },
+
+          { "type": "card", "id": "ga_c1_word_go_raibh", "fr": "Merci", "target": "Go raibh maith agat" },
+          { "id": "ga_c1_v_5", "type": "qcm", "q": "Que signifie « Go raibh maith agat » ?", "options": ["Merci", "Pardon", "Bonjour"], "a": "Merci" },
+          { "id": "ga_c1_v_6", "type": "strict", "q": "Traduisez : Merci", "a": ["Go raibh maith agat"] },
+
+          { "type": "card", "id": "ga_c1_word_taflati", "fr": "De rien / Bienvenue", "target": "Tá fáilte romhat" },
+          { "id": "ga_c1_v_7", "type": "qcm", "q": "Que signifie « Tá fáilte romhat » ?", "options": ["De rien", "Excuse-moi", "Bonsoir"], "a": "De rien" },
+          { "id": "ga_c1_v_8", "type": "strict", "q": "Traduisez : De rien", "a": ["Tá fáilte romhat"] },
+
+          { "type": "card", "id": "ga_c1_word_ta", "fr": "Oui (litt. 'est')", "target": "Tá" },
+          { "id": "ga_c1_v_9", "type": "qcm", "q": "Que signifie « Tá » (en réponse à une question) ?", "options": ["Non", "Oui", "Peut-être"], "a": "Oui" },
+          { "id": "ga_c1_v_10", "type": "strict", "q": "Traduisez (réponse affirmative) : Oui", "a": ["Tá"] },
+
+          { "type": "card", "id": "ga_c1_word_nil", "fr": "Non (litt. 'n'est pas')", "target": "Níl" },
+          { "id": "ga_c1_v_11", "type": "qcm", "q": "Que signifie « Níl » (en réponse à une question) ?", "options": ["Oui", "Non", "Merci"], "a": "Non" },
+          { "id": "ga_c1_v_12", "type": "strict", "q": "Traduisez (réponse négative) : Non", "a": ["Níl"] },
+
+          { "id": "ga_c1_v_13", "type": "qcm", "hard": true, "q": "Laquelle de ces paires est correcte (remerciement / réponse) ?", "options": ["Dia dhuit / Slán", "Go raibh maith agat / Tá fáilte romhat", "Tá / Go raibh maith agat"], "a": "Go raibh maith agat / Tá fáilte romhat" },
+          { "id": "ga_c1_v_14", "type": "strict", "q": "Traduisez : Non, merci", "a": ["Níl, go raibh maith agat"] },
+          { "id": "ga_c1_v_15", "type": "qcm", "q": "Quelle est la salutation la plus courante en irlandais ?", "options": ["Dia dhuit", "Slán", "Tá"], "a": "Dia dhuit" },
+          { "id": "ga_c1_v_16", "type": "strict", "hard": true, "q": "Traduisez : Oui, merci", "a": ["Tá, go raibh maith agat"] }
+        ],
+        "grammar": [
+          { "type": "gcard", "id": "ga_c1_g_card1", "title": "Pas de mots pour « oui » et « non »", "content": "Particularité du gaélique : il n'existe pas de mot unique pour « oui » ou « non » ! On répond en répétant le verbe de la question, à l'affirmatif (Tá) ou au négatif (Níl) selon le verbe utilisé." },
+          { "id": "ga_c1_g_1", "type": "qcm", "q": "Comment répond-on « oui » à une question construite avec le verbe « bí » (être) ?", "options": ["Tá", "Sea", "Ja"], "a": "Tá" },
+          { "id": "ga_c1_g_2", "type": "qcm", "q": "Que remplace « Níl » dans une réponse ?", "options": ["Le verbe au négatif", "Le sujet", "L'article"], "a": "Le verbe au négatif" },
+
+          { "type": "gcard", "id": "ga_c1_g_card2", "title": "L'ordre Verbe-Sujet-Objet (VSO)", "content": "Contrairement au français, l'irlandais place le verbe en tête de phrase : « Tá mé go maith » (litt. « Suis je bien » = Je vais bien)." },
+          { "id": "ga_c1_g_3", "type": "strict", "q": "Traduisez : Je vais bien (utilisez 'Tá mé go maith')", "a": ["Tá mé go maith"] },
+          { "id": "ga_c1_g_4", "type": "qcm", "q": "Quel est l'ordre des mots typique en irlandais ?", "options": ["Verbe-Sujet-Objet", "Sujet-Verbe-Objet", "Objet-Verbe-Sujet"], "a": "Verbe-Sujet-Objet" },
+          { "id": "ga_c1_g_5", "type": "strict", "hard": true, "q": "Traduisez littéralement l'ordre des mots de « Tá sé go maith » (il va bien)", "a": ["Tá sé go maith"] },
+
+          { "type": "gcard", "id": "ga_c1_g_card3", "title": "Le verbe « bí » (être) au présent", "content": "Tá mé (je suis), Tá tú (tu es), Tá sé/sí (il/elle est), Tá muid / Táimid (nous sommes)." },
+          { "id": "ga_c1_g_6", "type": "qcm", "q": "Comment dit-on « tu es » ?", "options": ["Tá tú", "Tá mé", "Tá sé"], "a": "Tá tú" },
+          { "id": "ga_c1_g_7", "type": "strict", "q": "Traduisez : Il est / Il va (utilisez 'Tá sé')", "a": ["Tá sé"] },
+          { "id": "ga_c1_g_8", "type": "qcm", "hard": true, "q": "Quelle phrase est grammaticalement correcte pour « Elle est »?", "options": ["Tá sí", "Sí tá", "Tá go sí"], "a": "Tá sí" },
+          { "id": "ga_c1_g_9", "type": "strict", "q": "Traduisez : Nous sommes (utilisez 'Táimid')", "a": ["Táimid"] },
+          { "id": "ga_c1_g_10", "type": "qcm", "q": "Quel mot signifie « bien » dans « Tá mé go maith » ?", "options": ["maith", "mé", "tá"], "a": "maith" }
+        ],
+        "reading": [
+          { "type": "gcard", "id": "ga_c1_r_intro", "title": "Compréhension : Une rencontre", "content": "Lisez le dialogue suivant :\n— Dia dhuit! Is mise Anna.\n— Dia dhuit! Níl, is mise Erik.\n— Go raibh maith agat, Erik. Táimid inár gcairde anois.\n\n(Traduction indicative : Bonjour, je suis Anna. / Bonjour, non, je suis Erik. / Merci Erik, nous sommes amis maintenant.)" },
+          { "id": "ga_c1_r_1", "type": "qcm", "q": "Comment s'appelle la première personne ?", "options": ["Anna", "Erik", "Lena"], "a": "Anna" },
+          { "id": "ga_c1_r_2", "type": "qcm", "q": "Que répond Erik après « Dia dhuit! » ?", "options": ["Dia dhuit", "Go raibh maith agat", "Tá"], "a": "Dia dhuit" },
+          { "id": "ga_c1_r_3", "type": "strict", "q": "D'après le dialogue, traduisez : je suis (formule 'is mise')", "a": ["is mise"] },
+          { "id": "ga_c1_r_4", "type": "qcm", "q": "Que veut dire « gcairde » dans le contexte ?", "options": ["Amis", "Ennemis", "Voisins"], "a": "Amis" },
+          { "id": "ga_c1_r_5", "type": "qcm", "hard": true, "q": "Quel mot du dialogue signifie « maintenant » ?", "options": ["anois", "inné", "amárach"], "a": "anois" },
+          { "id": "ga_c1_r_6", "type": "strict", "q": "Traduisez la phrase : Nous sommes amis (utilisez 'Táimid inár gcairde')", "a": ["Táimid inár gcairde"] },
+          { "id": "ga_c1_r_7", "type": "qcm", "q": "Quel est le ton général du dialogue ?", "options": ["Formel et distant", "Amical et informel", "Conflictuel"], "a": "Amical et informel" },
+          { "id": "ga_c1_r_8", "type": "qcm", "q": "Qui remercie qui dans le dialogue ?", "options": ["Anna remercie Erik", "Erik remercie Anna", "Personne ne remercie"], "a": "Anna remercie Erik" },
+          { "id": "ga_c1_r_9", "type": "strict", "hard": true, "q": "Complétez d'après le dialogue : « Is ___ Anna » (je suis)", "a": ["mise"] },
+          { "id": "ga_c1_r_10", "type": "qcm", "q": "Combien de personnes parlent dans ce dialogue ?", "options": ["Une", "Deux", "Trois"], "a": "Deux" }
+        ],
+        "review": [
+          { "id": "ga_c1_rev_1", "type": "qcm", "q": "Que signifie « Dia dhuit » ?", "options": ["Au revoir", "Bonjour", "Merci"], "a": "Bonjour" },
+          { "id": "ga_c1_rev_2", "type": "strict", "q": "Traduisez : Merci", "a": ["Go raibh maith agat"] },
+          { "id": "ga_c1_rev_3", "type": "qcm", "q": "Comment répond-on « oui » avec le verbe « bí » ?", "options": ["Tá", "Sea", "Ja"], "a": "Tá" },
+          { "id": "ga_c1_rev_4", "type": "strict", "q": "Traduisez : Je suis / Je vais (utilisez 'Tá mé')", "a": ["Tá mé"] },
+          { "id": "ga_c1_rev_5", "type": "qcm", "q": "Comment dit-on « Non » en réponse à une question avec « bí » ?", "options": ["Tá", "Níl", "Sea"], "a": "Níl" },
+          { "id": "ga_c1_rev_6", "type": "strict", "hard": true, "q": "Traduisez la phrase : Nous sommes amis", "a": ["Táimid inár gcairde"] },
+          { "id": "ga_c1_rev_7", "type": "qcm", "q": "Que signifie « Tá fáilte romhat » ?", "options": ["De rien", "Bonsoir", "Excuse-moi"], "a": "De rien" },
+          { "id": "ga_c1_rev_8", "type": "strict", "q": "Traduisez : Au revoir", "a": ["Slán"] },
+          { "id": "ga_c1_rev_9", "type": "qcm", "hard": true, "q": "Quelle est la structure de phrase typique en irlandais ?", "options": ["Sujet-Verbe-Objet", "Objet-Sujet-Verbe", "Verbe-Sujet-Objet"], "a": "Verbe-Sujet-Objet" },
+          { "id": "ga_c1_rev_10", "type": "strict", "q": "Traduisez : Oui, merci", "a": ["Tá, go raibh maith agat"] }
+        ]
+      }
+    },
+    {
+      "chapterId": "c2",
+      "title": "Chapitre 2 : La Famille & Les Nombres",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "id": "ga_c2_word_teaghlach", "fr": "Famille", "target": "Teaghlach" },
+          { "id": "ga_c2_v_1", "type": "qcm", "q": "Que signifie « Teaghlach » ?", "options": ["Famille", "Ami", "Maison"], "a": "Famille" },
+          { "id": "ga_c2_v_2", "type": "strict", "q": "Traduisez : Famille", "a": ["Teaghlach"] },
+
+          { "type": "card", "id": "ga_c2_word_mam", "fr": "Maman", "target": "Mam" },
+          { "id": "ga_c2_v_3", "type": "qcm", "q": "Que signifie « Mam » ?", "options": ["Papa", "Maman", "Sœur"], "a": "Maman" },
+          { "id": "ga_c2_v_4", "type": "strict", "q": "Traduisez : Maman", "a": ["Mam"] },
+
+          { "type": "card", "id": "ga_c2_word_daid", "fr": "Papa", "target": "Daid" },
+          { "id": "ga_c2_v_5", "type": "qcm", "q": "Que signifie « Daid » ?", "options": ["Papa", "Maman", "Frère"], "a": "Papa" },
+          { "id": "ga_c2_v_6", "type": "strict", "q": "Traduisez : Papa", "a": ["Daid"] },
+
+          { "type": "card", "id": "ga_c2_word_haon", "fr": "Un (1)", "target": "A haon" },
+          { "id": "ga_c2_v_7", "type": "qcm", "q": "Que signifie « A haon » ?", "options": ["Un", "Deux", "Trois"], "a": "Un" },
+          { "id": "ga_c2_v_8", "type": "strict", "q": "Traduisez le chiffre : Un", "a": ["A haon"] },
+
+          { "type": "card", "id": "ga_c2_word_ado", "fr": "Deux (2)", "target": "A dó" },
+          { "id": "ga_c2_v_9", "type": "qcm", "q": "Que signifie « A dó » ?", "options": ["Un", "Deux", "Quatre"], "a": "Deux" },
+          { "id": "ga_c2_v_10", "type": "strict", "q": "Traduisez le chiffre : Deux", "a": ["A dó"] },
+
+          { "type": "card", "id": "ga_c2_word_atri", "fr": "Trois (3)", "target": "A trí" },
+          { "id": "ga_c2_v_11", "type": "qcm", "q": "Que signifie « A trí » ?", "options": ["Trois", "Cinq", "Deux"], "a": "Trois" },
+          { "id": "ga_c2_v_12", "type": "strict", "q": "Traduisez le chiffre : Trois", "a": ["A trí"] },
+
+          { "id": "ga_c2_v_13", "type": "qcm", "hard": true, "q": "Comment dirait-on « Ma famille » ? (indice : mo = mon/ma)", "options": ["Mo theaghlach", "Teaghlach mo", "Teaghlach mé"], "a": "Mo theaghlach" },
+          { "id": "ga_c2_v_14", "type": "strict", "q": "Traduisez : Un, deux, trois", "a": ["A haon, a dó, a trí"] },
+          { "id": "ga_c2_v_15", "type": "qcm", "q": "Quel mot désigne le père en irlandais ?", "options": ["Mam", "Daid", "Teaghlach"], "a": "Daid" },
+          { "id": "ga_c2_v_16", "type": "strict", "hard": true, "q": "Traduisez : Maman et Papa", "a": ["Mam agus Daid"] }
+        ],
+        "grammar": [
+          { "type": "gcard", "id": "ga_c2_g_card1", "title": "La mutation initiale (séimhiú)", "content": "Particularité du gaélique : certains mots déclenchent une mutation de la consonne initiale du mot suivant (« séimhiú », ajout d'un h). Par exemple, après « mo » (mon/ma) : teaghlach → mo theaghlach." },
+          { "id": "ga_c2_g_1", "type": "qcm", "q": "Que se passe-t-il après « mo » (mon/ma) sur le mot qui suit ?", "options": ["Une mutation (séimhiú)", "Rien du tout", "Le mot devient pluriel"], "a": "Une mutation (séimhiú)" },
+          { "id": "ga_c2_g_2", "type": "strict", "q": "Complétez : mo theaghlach = ma ___", "a": ["famille"] },
+
+          { "type": "gcard", "id": "ga_c2_g_card2", "title": "Les adjectifs possessifs", "content": "Mo (mon/ma) + mutation, do (ton/ta) + mutation également. Exemple : do Mham (ta maman), mo Dhaid (mon papa)." },
+          { "id": "ga_c2_g_3", "type": "qcm", "q": "Comment dit-on « ta maman » ?", "options": ["do Mham", "mo Mham", "Mham do"], "a": "do Mham" },
+          { "id": "ga_c2_g_4", "type": "strict", "q": "Traduisez : Mon papa", "a": ["Mo Dhaid"] },
+          { "id": "ga_c2_g_5", "type": "qcm", "hard": true, "q": "Quelle forme utiliser pour dire « ma famille » ?", "options": ["mo theaghlach", "do theaghlach", "teaghlach mo"], "a": "mo theaghlach" },
+
+          { "type": "gcard", "id": "ga_c2_g_card3", "title": "Compter avec « a »", "content": "En irlandais, les nombres cardinaux isolés se disent avec « a » devant : a haon (un), a dó (deux), a trí (trois). Mais devant un nom, la forme change (ex : trí theach = trois maisons)." },
+          { "id": "ga_c2_g_6", "type": "qcm", "q": "Comment dit-on « un » de façon isolée (en comptant) ?", "options": ["A haon", "Haon", "Aon"], "a": "A haon" },
+          { "id": "ga_c2_g_7", "type": "strict", "q": "Traduisez le chiffre isolé : Deux", "a": ["A dó"] },
+          { "id": "ga_c2_g_8", "type": "qcm", "q": "Quelle phrase est correcte pour « Ma famille est grande » (mór = grand) ?", "options": ["Tá mo theaghlach mór", "Mo theaghlach tá mór", "Mór tá mo theaghlach"], "a": "Tá mo theaghlach mór" },
+          { "id": "ga_c2_g_9", "type": "strict", "hard": true, "q": "Traduisez : Ma famille est grande (utilisez 'Tá mo theaghlach mór')", "a": ["Tá mo theaghlach mór"] },
+          { "id": "ga_c2_g_10", "type": "qcm", "q": "Quel est le mot pour « famille » en irlandais ?", "options": ["Teaghlach", "Clann", "Muintir"], "a": "Teaghlach" }
+        ],
+        "reading": [
+          { "type": "gcard", "id": "ga_c2_r_intro", "title": "Compréhension : Ma famille", "content": "Lisez le texte suivant :\nIs mise Lisa. Níl mo theaghlach mór: Mam, Daid agus mé féin. Táimid triúr. Tá cat agam freisin. A haon, a dó, a trí - táimid ceathrar leis an gcat!\n\n(Indice : níl...mór = n'est pas grand, triúr = trois personnes, cat = chat, ceathrar = quatre personnes)" },
+          { "id": "ga_c2_r_1", "type": "qcm", "q": "Comment s'appelle la personne qui parle ?", "options": ["Anna", "Lisa", "Erik"], "a": "Lisa" },
+          { "id": "ga_c2_r_2", "type": "qcm", "q": "Combien de personnes composent la famille (sans le chat) ?", "options": ["Deux", "Trois", "Quatre"], "a": "Trois" },
+          { "id": "ga_c2_r_3", "type": "strict", "q": "D'après le texte, traduisez : chat", "a": ["cat"] },
+          { "id": "ga_c2_r_4", "type": "qcm", "q": "Que signifie « níl...mór » dans le texte ?", "options": ["n'est pas grand", "est très grand", "est aussi grand"], "a": "n'est pas grand" },
+          { "id": "ga_c2_r_5", "type": "qcm", "hard": true, "q": "Combien sont-ils en comptant le chat ?", "options": ["Trois (triúr)", "Quatre (ceathrar)", "Cinq"], "a": "Quatre (ceathrar)" },
+          { "id": "ga_c2_r_6", "type": "strict", "q": "Traduisez la phrase du texte : Nous sommes trois (utilisez 'Táimid triúr')", "a": ["Táimid triúr"] },
+          { "id": "ga_c2_r_7", "type": "qcm", "q": "La famille de Lisa est-elle décrite comme grande ?", "options": ["Oui, elle est grande", "Non, elle n'est pas grande", "Ce n'est pas précisé"], "a": "Non, elle n'est pas grande" },
+          { "id": "ga_c2_r_8", "type": "qcm", "q": "Quel animal Lisa possède-t-elle ?", "options": ["Un chien", "Un chat", "Un oiseau"], "a": "Un chat" },
+          { "id": "ga_c2_r_9", "type": "strict", "hard": true, "q": "Complétez d'après le texte : « Tá ___ agam freisin » (j'ai aussi un chat)", "a": ["cat"] },
+          { "id": "ga_c2_r_10", "type": "qcm", "q": "Quel est le sujet principal du texte ?", "options": ["Les nombres", "La présentation de la famille de Lisa", "Les animaux domestiques en Irlande"], "a": "La présentation de la famille de Lisa" }
+        ],
+        "review": [
+          { "id": "ga_c2_rev_1", "type": "qcm", "q": "Que signifie « Teaghlach » ?", "options": ["Ami", "Famille", "Voisin"], "a": "Famille" },
+          { "id": "ga_c2_rev_2", "type": "strict", "q": "Traduisez : Papa", "a": ["Daid"] },
+          { "id": "ga_c2_rev_3", "type": "qcm", "q": "Comment dit-on « trois » (isolé) ?", "options": ["A haon", "A dó", "A trí"], "a": "A trí" },
+          { "id": "ga_c2_rev_4", "type": "strict", "q": "Traduisez : Ma famille", "a": ["Mo theaghlach"] },
+          { "id": "ga_c2_rev_5", "type": "qcm", "hard": true, "q": "Quelle forme pour dire « ta maman » ?", "options": ["do Mham", "mo Mham"], "a": "do Mham" },
+          { "id": "ga_c2_rev_6", "type": "strict", "q": "Traduisez : Nous sommes trois (utilisez 'Táimid triúr')", "a": ["Táimid triúr"] },
+          { "id": "ga_c2_rev_7", "type": "qcm", "q": "Que signifie « cat » ?", "options": ["Chien", "Chat", "Oiseau"], "a": "Chat" },
+          { "id": "ga_c2_rev_8", "type": "strict", "q": "Traduisez : Ma famille est grande (utilisez 'Tá mo theaghlach mór')", "a": ["Tá mo theaghlach mór"] },
+          { "id": "ga_c2_rev_9", "type": "qcm", "hard": true, "q": "Comment appelle-t-on la mutation qui suit « mo » ?", "options": ["Séimhiú", "Urú", "Pluriel"], "a": "Séimhiú" },
+          { "id": "ga_c2_rev_10", "type": "qcm", "q": "Que signifie « níl...mór » ?", "options": ["n'est pas grand", "est toujours grand", "n'est jamais petit"], "a": "n'est pas grand" }
+        ]
+      }
+    }
+  ],
+  "intermediaire": [],
+  "avance": []
+}

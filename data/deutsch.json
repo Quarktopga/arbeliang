@@ -1,0 +1,162 @@
+{
+  "debutant": [
+    {
+      "chapterId": "c1",
+      "title": "Chapitre 1 : Les Salutations & Mots de Base",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "id": "de_c1_word_hallo", "fr": "Bonjour", "target": "Hallo" },
+          { "id": "de_c1_v_1", "type": "qcm", "q": "Que signifie « Hallo » ?", "options": ["Au revoir", "Bonjour", "Merci"], "a": "Bonjour" },
+          { "id": "de_c1_v_2", "type": "strict", "q": "Traduisez : Bonjour", "a": ["Hallo"] },
+
+          { "type": "card", "id": "de_c1_word_tschuss", "fr": "Au revoir", "target": "Tschüss" },
+          { "id": "de_c1_v_3", "type": "qcm", "q": "Que signifie « Tschüss » ?", "options": ["Bonjour", "Au revoir", "S'il te plaît"], "a": "Au revoir" },
+          { "id": "de_c1_v_4", "type": "strict", "q": "Traduisez : Au revoir", "a": ["Tschüss"] },
+
+          { "type": "card", "id": "de_c1_word_danke", "fr": "Merci", "target": "Danke" },
+          { "id": "de_c1_v_5", "type": "qcm", "q": "Que signifie « Danke » ?", "options": ["Merci", "Pardon", "Bonjour"], "a": "Merci" },
+          { "id": "de_c1_v_6", "type": "strict", "q": "Traduisez : Merci", "a": ["Danke"] },
+
+          { "type": "card", "id": "de_c1_word_bitte", "fr": "Je t'en prie / S'il te plaît", "target": "Bitte" },
+          { "id": "de_c1_v_7", "type": "qcm", "q": "Que signifie « Bitte » ?", "options": ["Je t'en prie", "Excuse-moi", "Bonsoir"], "a": "Je t'en prie" },
+          { "id": "de_c1_v_8", "type": "strict", "q": "Traduisez : Je t'en prie", "a": ["Bitte"] },
+
+          { "type": "card", "id": "de_c1_word_ja", "fr": "Oui", "target": "Ja" },
+          { "id": "de_c1_v_9", "type": "qcm", "q": "Que signifie « Ja » ?", "options": ["Non", "Oui", "Peut-être"], "a": "Oui" },
+          { "id": "de_c1_v_10", "type": "strict", "q": "Traduisez : Oui", "a": ["Ja"] },
+
+          { "type": "card", "id": "de_c1_word_nein", "fr": "Non", "target": "Nein" },
+          { "id": "de_c1_v_11", "type": "qcm", "q": "Que signifie « Nein » ?", "options": ["Oui", "Non", "Merci"], "a": "Non" },
+          { "id": "de_c1_v_12", "type": "strict", "q": "Traduisez : Non", "a": ["Nein"] },
+
+          { "id": "de_c1_v_13", "type": "qcm", "hard": true, "q": "Laquelle de ces paires est correcte (remerciement / réponse) ?", "options": ["Hallo / Tschüss", "Danke / Bitte", "Ja / Danke"], "a": "Danke / Bitte" },
+          { "id": "de_c1_v_14", "type": "strict", "q": "Traduisez : Non, merci", "a": ["Nein, danke"] },
+          { "id": "de_c1_v_15", "type": "qcm", "q": "Comment dit-on « Bonjour » de façon informelle en allemand courant ?", "options": ["Hallo", "Guten Tag", "Auf Wiedersehen"], "a": "Hallo" },
+          { "id": "de_c1_v_16", "type": "strict", "hard": true, "q": "Traduisez : Oui, merci", "a": ["Ja, danke"] }
+        ],
+        "grammar": [
+          { "type": "gcard", "id": "de_c1_g_card1", "title": "L'article indéfini", "content": "En allemand, il existe trois genres grammaticaux : masculin (der), féminin (die), neutre (das). À l'indéfini : ein Mann (un homme), eine Frau (une femme), ein Kind (un enfant). Il faut apprendre le genre avec chaque nom." },
+          { "id": "de_c1_g_1", "type": "qcm", "q": "Quel article utilise-t-on pour « Kind » (enfant, neutre) ?", "options": ["ein", "eine", "einen"], "a": "ein" },
+          { "id": "de_c1_g_2", "type": "qcm", "q": "Quel article utilise-t-on pour « Frau » (femme, féminin) ?", "options": ["ein", "eine", "der"], "a": "eine" },
+
+          { "type": "gcard", "id": "de_c1_g_card2", "title": "Le verbe « sein » (être)", "content": "« Sein » se conjugue selon la personne : Ich bin (je suis), Du bist (tu es), Er/Sie/Es ist (il/elle est), Wir sind (nous sommes)." },
+          { "id": "de_c1_g_3", "type": "strict", "q": "Traduisez : Je suis (utilisez 'sein')", "a": ["Ich bin"] },
+          { "id": "de_c1_g_4", "type": "qcm", "q": "Comment dit-on « tu es » ?", "options": ["Du bist", "Ich bin", "Wir sind"], "a": "Du bist" },
+          { "id": "de_c1_g_5", "type": "strict", "hard": true, "q": "Traduisez : Nous sommes (utilisez 'sein')", "a": ["Wir sind"] },
+
+          { "type": "gcard", "id": "de_c1_g_card3", "title": "L'ordre des mots de base", "content": "L'ordre standard en allemand est Sujet-Verbe-Objet, comme en français : « Ich spreche Deutsch » (Je parle allemand). Attention : le verbe conjugué reste toujours en 2e position dans une phrase déclarative." },
+          { "id": "de_c1_g_6", "type": "qcm", "q": "Quel est l'ordre correct pour « Je parle allemand » ?", "options": ["Ich spreche Deutsch", "Spreche ich Deutsch", "Deutsch ich spreche"], "a": "Ich spreche Deutsch" },
+          { "id": "de_c1_g_7", "type": "strict", "q": "Traduisez : Il est (utilisez 'sein')", "a": ["Er ist"] },
+          { "id": "de_c1_g_8", "type": "qcm", "hard": true, "q": "Quelle phrase est grammaticalement correcte ?", "options": ["Sie ist Deutsche", "Sie Deutsche ist", "Deutsche sie ist"], "a": "Sie ist Deutsche" },
+          { "id": "de_c1_g_9", "type": "strict", "q": "Traduisez : Elle est (utilisez 'sein')", "a": ["Sie ist"] },
+          { "id": "de_c1_g_10", "type": "qcm", "q": "Quel article pour « Apfel » (pomme, masculin) ?", "options": ["der", "die", "das"], "a": "der" }
+        ],
+        "reading": [
+          { "type": "gcard", "id": "de_c1_r_intro", "title": "Compréhension : Une rencontre", "content": "Lisez le dialogue suivant :\n— Hallo! Ich heiße Anna.\n— Hallo! Nein, ich heiße Erik.\n— Danke, Erik. Wir sind jetzt Freunde.\n\n(Traduction indicative : Bonjour, je m'appelle Anna. / Bonjour, non, je m'appelle Erik. / Merci Erik, nous sommes amis maintenant.)" },
+          { "id": "de_c1_r_1", "type": "qcm", "q": "Comment s'appelle la première personne ?", "options": ["Anna", "Erik", "Lena"], "a": "Anna" },
+          { "id": "de_c1_r_2", "type": "qcm", "q": "Que répond Erik après « Hallo! » ?", "options": ["Hallo", "Danke", "Ja"], "a": "Hallo" },
+          { "id": "de_c1_r_3", "type": "strict", "q": "D'après le dialogue, traduisez : je m'appelle (verbe seul)", "a": ["heiße", "ich heiße"] },
+          { "id": "de_c1_r_4", "type": "qcm", "q": "Que veut dire « Freunde » dans le contexte ?", "options": ["Amis", "Ennemis", "Voisins"], "a": "Amis" },
+          { "id": "de_c1_r_5", "type": "qcm", "hard": true, "q": "Quel mot du dialogue signifie « maintenant » ?", "options": ["jetzt", "dann", "schon"], "a": "jetzt" },
+          { "id": "de_c1_r_6", "type": "strict", "q": "Traduisez la phrase : Nous sommes amis", "a": ["Wir sind Freunde"] },
+          { "id": "de_c1_r_7", "type": "qcm", "q": "Quel est le ton général du dialogue ?", "options": ["Formel et distant", "Amical et informel", "Conflictuel"], "a": "Amical et informel" },
+          { "id": "de_c1_r_8", "type": "qcm", "q": "Qui remercie qui dans le dialogue ?", "options": ["Anna remercie Erik", "Erik remercie Anna", "Personne ne remercie"], "a": "Anna remercie Erik" },
+          { "id": "de_c1_r_9", "type": "strict", "hard": true, "q": "Complétez d'après le dialogue : « Ich ___ Anna » (je m'appelle)", "a": ["heiße"] },
+          { "id": "de_c1_r_10", "type": "qcm", "q": "Combien de personnes parlent dans ce dialogue ?", "options": ["Une", "Deux", "Trois"], "a": "Deux" }
+        ],
+        "review": [
+          { "id": "de_c1_rev_1", "type": "qcm", "q": "Que signifie « Hallo » ?", "options": ["Au revoir", "Bonjour", "Merci"], "a": "Bonjour" },
+          { "id": "de_c1_rev_2", "type": "strict", "q": "Traduisez : Merci", "a": ["Danke"] },
+          { "id": "de_c1_rev_3", "type": "qcm", "q": "Quel article pour « Kind » (enfant) ?", "options": ["ein", "eine"], "a": "ein" },
+          { "id": "de_c1_rev_4", "type": "strict", "q": "Traduisez : Je suis", "a": ["Ich bin"] },
+          { "id": "de_c1_rev_5", "type": "qcm", "q": "Comment dit-on « Non » ?", "options": ["Ja", "Nein", "Danke"], "a": "Nein" },
+          { "id": "de_c1_rev_6", "type": "strict", "hard": true, "q": "Traduisez la phrase : Nous sommes amis", "a": ["Wir sind Freunde"] },
+          { "id": "de_c1_rev_7", "type": "qcm", "q": "Que signifie « Bitte » ?", "options": ["Je t'en prie", "Bonsoir", "Excuse-moi"], "a": "Je t'en prie" },
+          { "id": "de_c1_rev_8", "type": "strict", "q": "Traduisez : Au revoir", "a": ["Tschüss"] },
+          { "id": "de_c1_rev_9", "type": "qcm", "hard": true, "q": "Quelle est la structure correcte de phrase en allemand ?", "options": ["Sujet-Verbe-Objet", "Objet-Sujet-Verbe", "Verbe-Sujet-Objet"], "a": "Sujet-Verbe-Objet" },
+          { "id": "de_c1_rev_10", "type": "strict", "q": "Traduisez : Oui, merci", "a": ["Ja, danke"] }
+        ]
+      }
+    },
+    {
+      "chapterId": "c2",
+      "title": "Chapitre 2 : La Famille & Les Nombres",
+      "lessons": {
+        "vocab": [
+          { "type": "card", "id": "de_c2_word_familie", "fr": "Famille", "target": "Familie" },
+          { "id": "de_c2_v_1", "type": "qcm", "q": "Que signifie « Familie » ?", "options": ["Famille", "Ami", "Maison"], "a": "Famille" },
+          { "id": "de_c2_v_2", "type": "strict", "q": "Traduisez : Famille", "a": ["Familie"] },
+
+          { "type": "card", "id": "de_c2_word_mama", "fr": "Maman", "target": "Mama" },
+          { "id": "de_c2_v_3", "type": "qcm", "q": "Que signifie « Mama » ?", "options": ["Papa", "Maman", "Sœur"], "a": "Maman" },
+          { "id": "de_c2_v_4", "type": "strict", "q": "Traduisez : Maman", "a": ["Mama"] },
+
+          { "type": "card", "id": "de_c2_word_papa", "fr": "Papa", "target": "Papa" },
+          { "id": "de_c2_v_5", "type": "qcm", "q": "Que signifie « Papa » ?", "options": ["Papa", "Maman", "Frère"], "a": "Papa" },
+          { "id": "de_c2_v_6", "type": "strict", "q": "Traduisez : Papa", "a": ["Papa"] },
+
+          { "type": "card", "id": "de_c2_word_eins", "fr": "Un (1)", "target": "Eins" },
+          { "id": "de_c2_v_7", "type": "qcm", "q": "Que signifie « Eins » ?", "options": ["Un", "Deux", "Trois"], "a": "Un" },
+          { "id": "de_c2_v_8", "type": "strict", "q": "Traduisez le chiffre : Un", "a": ["Eins"] },
+
+          { "type": "card", "id": "de_c2_word_zwei", "fr": "Deux (2)", "target": "Zwei" },
+          { "id": "de_c2_v_9", "type": "qcm", "q": "Que signifie « Zwei » ?", "options": ["Un", "Deux", "Quatre"], "a": "Deux" },
+          { "id": "de_c2_v_10", "type": "strict", "q": "Traduisez le chiffre : Deux", "a": ["Zwei"] },
+
+          { "type": "card", "id": "de_c2_word_drei", "fr": "Trois (3)", "target": "Drei" },
+          { "id": "de_c2_v_11", "type": "qcm", "q": "Que signifie « Drei » ?", "options": ["Trois", "Cinq", "Deux"], "a": "Trois" },
+          { "id": "de_c2_v_12", "type": "strict", "q": "Traduisez le chiffre : Trois", "a": ["Drei"] },
+
+          { "id": "de_c2_v_13", "type": "qcm", "hard": true, "q": "Comment dirait-on « Ma famille » ? (indice : meine = ma, Familie est féminin)", "options": ["Meine Familie", "Familie meine", "Eine Familie"], "a": "Meine Familie" },
+          { "id": "de_c2_v_14", "type": "strict", "q": "Traduisez : Un, deux, trois", "a": ["Eins, zwei, drei"] },
+          { "id": "de_c2_v_15", "type": "qcm", "q": "Quel mot désigne le père en allemand ?", "options": ["Mama", "Papa", "Familie"], "a": "Papa" },
+          { "id": "de_c2_v_16", "type": "strict", "hard": true, "q": "Traduisez : Maman et Papa", "a": ["Mama und Papa"] }
+        ],
+        "grammar": [
+          { "type": "gcard", "id": "de_c2_g_card1", "title": "Le pluriel", "content": "L'allemand a plusieurs façons de former le pluriel (souvent avec Umlaut et/ou terminaison) : das Kind → die Kinder (les enfants), die Frau → die Frauen (les femmes). Le pluriel se retient nom par nom." },
+          { "id": "de_c2_g_1", "type": "qcm", "q": "Quel est le pluriel de « das Kind » (enfant) ?", "options": ["die Kinder", "die Kinden", "die Kindes"], "a": "die Kinder" },
+          { "id": "de_c2_g_2", "type": "strict", "q": "Complétez : die Frau → die Frau___ (les femmes)", "a": ["en"] },
+
+          { "type": "gcard", "id": "de_c2_g_card2", "title": "Les adjectifs possessifs", "content": "Mein/meine (mon/ma) s'accorde avec le genre : mein Vater (masculin), meine Mutter (féminin), mein Kind (neutre). Dein/deine fonctionne pareil pour « ton/ta »." },
+          { "id": "de_c2_g_3", "type": "qcm", "q": "Quelle forme utiliser avec « Mutter » (féminin) ?", "options": ["mein Mutter", "meine Mutter", "meinen Mutter"], "a": "meine Mutter" },
+          { "id": "de_c2_g_4", "type": "strict", "q": "Traduisez : Mon père (Vater est masculin)", "a": ["Mein Vater"] },
+          { "id": "de_c2_g_5", "type": "qcm", "hard": true, "q": "Quelle forme utiliser avec « Kind » (neutre) pour dire « ton enfant » ?", "options": ["dein Kind", "deine Kind", "deinen Kind"], "a": "dein Kind" },
+
+          { "type": "gcard", "id": "de_c2_g_card3", "title": "Les nombres comme adjectifs", "content": "Les nombres précèdent toujours le nom, sans accord de genre : zwei Autos (deux voitures), drei Häuser (trois maisons)." },
+          { "id": "de_c2_g_6", "type": "qcm", "q": "Comment dit-on « trois maisons » ?", "options": ["drei Häuser", "Häuser drei", "drei Hausen"], "a": "drei Häuser" },
+          { "id": "de_c2_g_7", "type": "strict", "q": "Traduisez : Deux voitures (Auto, pluriel Autos)", "a": ["Zwei Autos"] },
+          { "id": "de_c2_g_8", "type": "qcm", "q": "Quelle phrase est correcte ?", "options": ["Meine Familie ist groß", "Familie meine ist groß", "Ist meine Familie groß (affirmatif)"], "a": "Meine Familie ist groß" },
+          { "id": "de_c2_g_9", "type": "strict", "hard": true, "q": "Traduisez : Ma famille est grande (groß = grand/grande)", "a": ["Meine Familie ist groß"] },
+          { "id": "de_c2_g_10", "type": "qcm", "q": "Quel est l'ordre correct pour « un livre » (Buch, neutre) ?", "options": ["ein Buch", "Buch ein", "eine Buch"], "a": "ein Buch" }
+        ],
+        "reading": [
+          { "type": "gcard", "id": "de_c2_r_intro", "title": "Compréhension : Ma famille", "content": "Lisez le texte suivant :\nIch heiße Lisa. Meine Familie ist nicht groß: Mama, Papa und ich. Wir sind drei. Ich habe auch eine Katze. Eins, zwei, drei - wir sind vier mit der Katze!\n\n(Indice : nicht = ne...pas, habe = a/possède, Katze = chat, vier = quatre)" },
+          { "id": "de_c2_r_1", "type": "qcm", "q": "Comment s'appelle la personne qui parle ?", "options": ["Anna", "Lisa", "Erik"], "a": "Lisa" },
+          { "id": "de_c2_r_2", "type": "qcm", "q": "Combien de personnes composent la famille (sans le chat) ?", "options": ["Deux", "Trois", "Quatre"], "a": "Trois" },
+          { "id": "de_c2_r_3", "type": "strict", "q": "D'après le texte, traduisez : chat", "a": ["Katze"] },
+          { "id": "de_c2_r_4", "type": "qcm", "q": "Que signifie « nicht » dans le texte ?", "options": ["ne...pas", "très", "aussi"], "a": "ne...pas" },
+          { "id": "de_c2_r_5", "type": "qcm", "hard": true, "q": "Combien sont-ils en comptant le chat ?", "options": ["Trois", "Quatre", "Cinq"], "a": "Quatre" },
+          { "id": "de_c2_r_6", "type": "strict", "q": "Traduisez la phrase du texte : Nous sommes trois", "a": ["Wir sind drei"] },
+          { "id": "de_c2_r_7", "type": "qcm", "q": "La famille de Lisa est-elle décrite comme grande ?", "options": ["Oui, elle est grande", "Non, elle n'est pas grande", "Ce n'est pas précisé"], "a": "Non, elle n'est pas grande" },
+          { "id": "de_c2_r_8", "type": "qcm", "q": "Quel animal Lisa possède-t-elle ?", "options": ["Un chien", "Un chat", "Un oiseau"], "a": "Un chat" },
+          { "id": "de_c2_r_9", "type": "strict", "hard": true, "q": "Complétez d'après le texte : « Ich habe auch eine ___ » (chat)", "a": ["Katze"] },
+          { "id": "de_c2_r_10", "type": "qcm", "q": "Quel est le sujet principal du texte ?", "options": ["Les nombres", "La présentation de la famille de Lisa", "Les animaux domestiques en Allemagne"], "a": "La présentation de la famille de Lisa" }
+        ],
+        "review": [
+          { "id": "de_c2_rev_1", "type": "qcm", "q": "Que signifie « Familie » ?", "options": ["Ami", "Famille", "Voisin"], "a": "Famille" },
+          { "id": "de_c2_rev_2", "type": "strict", "q": "Traduisez : Papa", "a": ["Papa"] },
+          { "id": "de_c2_rev_3", "type": "qcm", "q": "Comment dit-on « trois » ?", "options": ["Eins", "Zwei", "Drei"], "a": "Drei" },
+          { "id": "de_c2_rev_4", "type": "strict", "q": "Traduisez : Ma famille", "a": ["Meine Familie"] },
+          { "id": "de_c2_rev_5", "type": "qcm", "hard": true, "q": "Quelle forme possessive pour « Kind » (neutre) : ton enfant ?", "options": ["dein Kind", "deine Kind"], "a": "dein Kind" },
+          { "id": "de_c2_rev_6", "type": "strict", "q": "Traduisez : Deux voitures", "a": ["Zwei Autos"] },
+          { "id": "de_c2_rev_7", "type": "qcm", "q": "Que signifie « Katze » ?", "options": ["Chien", "Chat", "Oiseau"], "a": "Chat" },
+          { "id": "de_c2_rev_8", "type": "strict", "q": "Traduisez : Nous sommes trois", "a": ["Wir sind drei"] },
+          { "id": "de_c2_rev_9", "type": "qcm", "hard": true, "q": "Quel est le pluriel de « das Kind » ?", "options": ["die Kinder", "die Kinden", "die Kinds"], "a": "die Kinder" },
+          { "id": "de_c2_rev_10", "type": "qcm", "q": "Que signifie « nicht » ?", "options": ["ne...pas", "toujours", "jamais"], "a": "ne...pas" }
+        ]
+      }
+    }
+  ],
+  "intermediaire": [],
+  "avance": []
+}
