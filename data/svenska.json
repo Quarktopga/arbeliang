@@ -2,123 +2,50 @@
   "debutant": [
     {
       "chapterId": "c1",
-      "title": "Chapitre 1 : Les Salutations & Mots de Base",
+      "title": "Chapitre 1 : Les Salutations & Découverte",
       "lessons": {
         "vocab": [
           { "type": "card", "id": "sv_c1_word_hej", "fr": "Bonjour", "target": "Hej" },
-          { "id": "sv_c1_v_1", "type": "qcm", "q": "Que signifie « Hej » ?", "options": ["Au revoir", "Bonjour", "Merci"], "a": "Bonjour" },
-          { "id": "sv_c1_v_2", "type": "strict", "q": "Traduisez : Bonjour", "a": ["Hej"] },
-          { "type": "card", "id": "sv_c1_word_hejda", "fr": "Au revoir", "target": "Hej då" },
-          { "id": "sv_c1_v_3", "type": "qcm", "q": "Que signifie « Hej då » ?", "options": ["Bonjour", "Au revoir", "Merci"], "a": "Au revoir" },
-          { "id": "sv_c1_v_4", "type": "strict", "q": "Traduisez : Au revoir", "a": ["Hej då"] },
-          { "type": "card", "id": "sv_c1_word_tack", "fr": "Merci", "target": "Tack" },
-          { "id": "sv_c1_v_5", "type": "qcm", "q": "Que signifie « Tack » ?", "options": ["Merci", "Bonjour", "Au revoir"], "a": "Merci" },
-          { "id": "sv_c1_v_6", "type": "strict", "q": "Traduisez : Merci", "a": ["Tack"] },
-          { "type": "card", "id": "sv_c1_word_ja", "fr": "Oui", "target": "Ja" },
-          { "id": "sv_c1_v_7", "type": "qcm", "q": "Que signifie « Ja » ?", "options": ["Non", "Oui", "Merci"], "a": "Oui" },
-          { "id": "sv_c1_v_8", "type": "strict", "q": "Traduisez : Oui", "a": ["Ja"] },
-          { "id": "sv_c1_v_9", "type": "strict", "hard": true, "q": "Traduisez cette phrase : Oui, merci !", "a": ["Ja, tack"] },
-          { "id": "sv_c1_v_10", "type": "strict", "hard": true, "q": "Traduisez cette phrase : Bonjour, merci !", "a": ["Hej, tack"] }
+          { "id": "sv_c1_v_1", "type": "qcm", "q": "Que signifie « Hej » ?", "options": ["Au revoir", "Bonjour", "Merci"], "a": "Bonjour" }
         ],
         "grammar": [
-          { "type": "gcard", "id": "sv_c1_g_card1", "title": "Le genre neutre : « ett »", "content": "Certains noms suédois sont neutres et utilisent l'article « ett ». Exemple : ett barn (un enfant)." },
-          { "id": "sv_c1_g_1", "type": "qcm", "q": "Quel article pour « barn » (enfant) ?", "options": ["en", "ett", "den"], "a": "ett" },
-          { "id": "sv_c1_g_2", "type": "strict", "q": "Traduisez : un enfant", "a": ["ett barn"] },
-          { "type": "gcard", "id": "sv_c1_g_card2", "title": "Le genre commun : « en »", "content": "D'autres noms sont communs et utilisent l'article « en ». Exemple : en vän (un ami/une amie)." },
-          { "id": "sv_c1_g_3", "type": "qcm", "q": "Quel article pour « vän » (ami) ?", "options": ["en", "ett", "de"], "a": "en" },
-          { "id": "sv_c1_g_4", "type": "qcm", "q": "Lequel est un « en-mot » ?", "options": ["vän", "barn"], "a": "vän" },
-          { "type": "gcard", "id": "sv_c1_g_card3", "title": "Les pronoms et le verbe « vara » (être)", "content": "Jag (je), du (tu), han (il), hon (elle). « Vara » ne change jamais : Jag är, Du är, Han är, Hon är." },
-          { "id": "sv_c1_g_5", "type": "strict", "q": "Traduisez : Je suis", "a": ["Jag är"] },
-          { "id": "sv_c1_g_6", "type": "qcm", "q": "Comment dit-on « il est » ?", "options": ["Han är", "Hon är", "Du är"], "a": "Han är" },
-          { "id": "sv_c1_g_7", "type": "strict", "q": "Traduisez : Tu es un ami.", "a": ["Du är en vän"] },
-          { "id": "sv_c1_g_8", "type": "strict", "q": "Traduisez : Elle est une enfant.", "a": ["Hon är ett barn"] },
-          { "id": "sv_c1_g_9", "type": "strict", "hard": true, "q": "Traduisez : Bonjour, je suis un ami.", "a": ["Hej, jag är en vän"] },
-          { "id": "sv_c1_g_10", "type": "strict", "hard": true, "q": "Traduisez : Oui, elle est une enfant.", "a": ["Ja, hon är ett barn"] }
+          { "type": "gcard", "title": "L'absence de conjugaison de personne", "content": "En suédois, le verbe ne change jamais de forme selon la personne (je, tu, il...). Jag är = Je suis, Du är = Tu es." }
         ],
         "reading": [
-          { "id": "sv_c1_r_1", "type": "qcm", "ctx": "Hej! Jag är Anna.", "q": "Comment s'appelle la personne qui parle ?", "options": ["Anna", "Erik", "Hej"], "a": "Anna" },
-          { "id": "sv_c1_r_2", "type": "qcm", "ctx": "Hej, Erik! Jag är en vän.", "q": "Que dit la personne à propos d'elle-même ?", "options": ["Elle est une enfant", "Elle est une amie", "Elle est Erik"], "a": "Elle est une amie" },
-          { "id": "sv_c1_r_3", "type": "strict", "ctx": "Tack, Anna!", "q": "Traduisez le mot de remerciement.", "a": ["Tack"] },
-          { "id": "sv_c1_r_4", "type": "qcm", "ctx": "Hej då, Erik!", "q": "Que veut dire cette phrase ?", "options": ["Bonjour, Erik !", "Au revoir, Erik !", "Merci, Erik !"], "a": "Au revoir, Erik !" },
-          { "id": "sv_c1_r_5", "type": "qcm", "ctx": "Han är en vän.", "q": "Que signifie « Han » ?", "options": ["Elle", "Il", "Je"], "a": "Il" },
-          { "id": "sv_c1_r_6", "type": "qcm", "ctx": "Hon är ett barn.", "q": "Que signifie « Hon » ?", "options": ["Il", "Tu", "Elle"], "a": "Elle" },
-          { "id": "sv_c1_r_7", "type": "qcm", "ctx": "Ja, jag är en vän.", "q": "Que signifie cette réponse ?", "options": ["Oui, je suis une amie", "Non, je suis un enfant", "Merci, je suis ici"], "a": "Oui, je suis une amie" },
-          { "id": "sv_c1_r_8", "type": "strict", "ctx": "Ja, du är ett barn.", "q": "Traduisez « ett barn » dans le contexte.", "a": ["un enfant"] },
-          { "id": "sv_c1_r_9", "type": "strict", "hard": true, "q": "Traduisez : Bonjour, elle est une amie.", "a": ["Hej, hon är en vän"] },
-          { "id": "sv_c1_r_10", "type": "strict", "hard": true, "q": "Traduisez : Merci, il est un ami.", "a": ["Tack, han är en vän"] }
+          {
+            "id": "sv_c1_cloze_1",
+            "type": "cloze",
+            "q": "Complétez le dialogue de salutation :",
+            "text": "Hej ! [blank] mår du ?",
+            "options": ["Hur", "Vad", "Vem"],
+            "a": "Hur"
+          },
+          {
+            "id": "sv_c1_jumble_1",
+            "type": "jumble",
+            "q": "Remettez les mots dans l'ordre pour dire 'Je parle suédois' :",
+            "words": ["svenska", "jag", "talar", "inte"],
+            "a": ["jag talar svenska"]
+          }
         ],
         "review": [
-          { "id": "sv_c1_rev_1", "type": "qcm", "q": "Que signifie « Tack » ?", "options": ["Merci", "Bonjour", "Oui"], "a": "Merci" },
-          { "id": "sv_c1_rev_2", "type": "qcm", "q": "Quel article avec « barn » ?", "options": ["en", "ett"], "a": "ett" },
-          { "id": "sv_c1_rev_3", "type": "strict", "q": "Traduisez : Je suis", "a": ["Jag är"] },
-          { "id": "sv_c1_rev_4", "type": "qcm", "q": "Que signifie « Hon » ?", "options": ["Il", "Elle", "Tu"], "a": "Elle" },
-          { "id": "sv_c1_rev_5", "type": "strict", "q": "Traduisez : Bonjour", "a": ["Hej"] },
-          { "id": "sv_c1_rev_6", "type": "strict", "hard": true, "q": "Traduisez : Bonjour, je suis Anna.", "a": ["Hej, jag är Anna"] },
-          { "id": "sv_c1_rev_7", "type": "strict", "hard": true, "q": "Traduisez : Merci, tu es un ami.", "a": ["Tack, du är en vän"] },
-          { "id": "sv_c1_rev_8", "type": "strict", "hard": true, "q": "Traduisez : Il est un ami.", "a": ["Han är en vän"] },
-          { "id": "sv_c1_rev_9", "type": "strict", "hard": true, "q": "Traduisez : Oui, elle est une enfant.", "a": ["Ja, hon är ett barn"] },
-          { "id": "sv_c1_rev_10", "type": "strict", "hard": true, "q": "Traduisez : Bonjour, tu es Erik.", "a": ["Hej, du är Erik"] }
-        ]
-      }
-    },
-    {
-      "chapterId": "c2",
-      "title": "Chapitre 2 : La Famille",
-      "lessons": {
-        "vocab": [
-          { "type": "card", "id": "sv_c2_word_mamma", "fr": "Maman", "target": "Mamma" },
-          { "id": "sv_c2_v_1", "type": "qcm", "q": "Que signifie « Mamma » ?", "options": ["Maman", "Papa", "Sœur"], "a": "Maman" },
-          { "id": "sv_c2_v_2", "type": "strict", "q": "Traduisez : Maman", "a": ["Mamma"] },
-          { "type": "card", "id": "sv_c2_word_pappa", "fr": "Papa", "target": "Pappa" },
-          { "id": "sv_c2_v_3", "type": "qcm", "q": "Que signifie « Pappa » ?", "options": ["Maman", "Papa", "Frère"], "a": "Papa" },
-          { "id": "sv_c2_v_4", "type": "strict", "q": "Traduisez : Papa", "a": ["Pappa"] },
-          { "type": "card", "id": "sv_c2_word_bror", "fr": "Frère", "target": "Bror" },
-          { "id": "sv_c2_v_5", "type": "qcm", "q": "Que signifie « Bror » ?", "options": ["Sœur", "Frère", "Ami"], "a": "Frère" },
-          { "id": "sv_c2_v_6", "type": "strict", "q": "Traduisez : Frère", "a": ["Bror"] },
-          { "type": "card", "id": "sv_c2_word_syster", "fr": "Sœur", "target": "Syster" },
-          { "id": "sv_c2_v_7", "type": "qcm", "q": "Que signifie « Syster » ?", "options": ["Frère", "Sœur", "Enfant"], "a": "Sœur" },
-          { "id": "sv_c2_v_8", "type": "strict", "q": "Traduisez : Sœur", "a": ["Syster"] },
-          { "id": "sv_c2_v_9", "type": "strict", "hard": true, "q": "Traduisez : Bonjour, je suis maman.", "a": ["Hej, jag är mamma"] },
-          { "id": "sv_c2_v_10", "type": "strict", "hard": true, "q": "Traduisez : Oui, il est papa.", "a": ["Ja, han är pappa"] }
-        ],
-        "grammar": [
-          { "type": "gcard", "id": "sv_c2_g_card1", "title": "Le possessif « min » (en-mots)", "content": "« Min » signifie mon/ma devant un en-mot. Exemple : min vän (mon ami)." },
-          { "id": "sv_c2_g_1", "type": "qcm", "q": "Comment dit-on « mon ami » ?", "options": ["min vän", "mitt vän", "vän min"], "a": "min vän" },
-          { "id": "sv_c2_g_2", "type": "strict", "q": "Traduisez : mon ami", "a": ["min vän"] },
-          { "type": "gcard", "id": "sv_c2_g_card2", "title": "Le possessif « mitt » (ett-mots)", "content": "« Mitt » signifie mon/ma devant un ett-mot. Exemple : mitt barn (mon enfant)." },
-          { "id": "sv_c2_g_3", "type": "qcm", "q": "Comment dit-on « mon enfant » ?", "options": ["min barn", "mitt barn", "barn mitt"], "a": "mitt barn" },
-          { "id": "sv_c2_g_4", "type": "qcm", "q": "Quelle forme pour « barn » (ett-mot) : mon enfant ?", "options": ["min", "mitt"], "a": "mitt" },
-          { "type": "gcard", "id": "sv_c2_g_card3", "title": "Le possessif « din / ditt » (ton/ta)", "content": "« Din » devant un en-mot, « ditt » devant un ett-mot. Exemple : din vän, ditt barn." },
-          { "id": "sv_c2_g_5", "type": "strict", "q": "Traduisez : ton ami", "a": ["din vän"] },
-          { "id": "sv_c2_g_6", "type": "strict", "q": "Traduisez : ton enfant", "a": ["ditt barn"] },
-          { "id": "sv_c2_g_7", "type": "strict", "q": "Traduisez : mon papa", "a": ["min pappa"] },
-          { "id": "sv_c2_g_8", "type": "strict", "q": "Traduisez : ta sœur", "a": ["din syster"] },
-          { "id": "sv_c2_g_9", "type": "strict", "hard": true, "q": "Traduisez : Bonjour, elle est ma sœur.", "a": ["Hej, hon är min syster"] },
-          { "id": "sv_c2_g_10", "type": "strict", "hard": true, "q": "Traduisez : Oui, il est mon frère.", "a": ["Ja, han är min bror"] }
-        ],
-        "reading": [
-          { "id": "sv_c2_r_1", "type": "qcm", "ctx": "Hej! Jag är Anna. Hon är min mamma.", "q": "Qui est la femme mentionnée ?", "options": ["C'est sa mère", "C'est son amie", "C'est son enfant"], "a": "C'est sa mère" },
-          { "id": "sv_c2_r_2", "type": "qcm", "ctx": "Erik är min bror.", "q": "Que signifie cette phrase ?", "options": ["Erik est mon frère", "Erik est ma sœur", "Erik est mon ami"], "a": "Erik est mon frère" },
-          { "id": "sv_c2_r_3", "type": "strict", "ctx": "Tack, pappa!", "q": "Traduisez le mot pour la personne remerciée.", "a": ["pappa"] },
-          { "id": "sv_c2_r_4", "type": "strict", "ctx": "Hej då, syster!", "q": "Traduisez « syster ».", "a": ["sœur"] },
-          { "id": "sv_c2_r_5", "type": "qcm", "ctx": "Han är din vän.", "q": "Que signifie « din » ici ?", "options": ["mon", "ton", "son"], "a": "ton" },
-          { "id": "sv_c2_r_6", "type": "qcm", "ctx": "Hon är mitt barn.", "q": "Pourquoi utilise-t-on « mitt » et non « min » ?", "options": ["Barn est un ett-mot", "Barn est un en-mot", "C'est une erreur"], "a": "Barn est un ett-mot" },
-          { "id": "sv_c2_r_7", "type": "qcm", "ctx": "Ja, jag är mamma.", "q": "Que signifie cette réponse ?", "options": ["Oui, je suis maman", "Non, je suis un enfant", "Merci maman"], "a": "Oui, je suis maman" },
-          { "id": "sv_c2_r_8", "type": "strict", "ctx": "Min bror är en vän.", "q": "Traduisez « en vän » dans le contexte.", "a": ["un ami"] },
-          { "id": "sv_c2_r_9", "type": "strict", "hard": true, "q": "Traduisez : Merci, tu es mon ami.", "a": ["Tack, du är min vän"] },
-          { "id": "sv_c2_r_10", "type": "strict", "hard": true, "q": "Traduisez : Oui, il est mon papa.", "a": ["Ja, han är min pappa"] }
-        ],
-        "review": [
-          { "id": "sv_c2_rev_1", "type": "qcm", "q": "Que signifie « Mamma » ?", "options": ["Maman", "Papa"], "a": "Maman" },
-          { "id": "sv_c2_rev_2", "type": "qcm", "q": "Quelle forme possessive pour « barn » (mon enfant) ?", "options": ["min", "mitt"], "a": "mitt" },
-          { "id": "sv_c2_rev_3", "type": "strict", "q": "Traduisez : ton ami", "a": ["din vän"] },
-          { "id": "sv_c2_rev_4", "type": "qcm", "q": "Que signifie « Bror » ?", "options": ["Frère", "Sœur"], "a": "Frère" },
-          { "id": "sv_c2_rev_5", "type": "strict", "q": "Traduisez : Bonjour", "a": ["Hej"] },
-          { "id": "sv_c2_rev_6", "type": "strict", "hard": true, "q": "Traduisez : Bonjour, je suis ta sœur.", "a": ["Hej, jag är din syster"] },
-          { "id": "sv_c2_rev_7", "type": "strict", "hard": true, "q": "Traduisez : Merci, il est mon frère.", "a": ["Tack, han är min bror"] },
-          { "id": "sv_c2_rev_8", "type": "strict", "hard": true, "q": "Traduisez : Oui, elle est mon amie.", "a": ["Ja, hon är min vän"] },
-          { "id": "sv_c2_rev_9", "type": "strict", "hard": true, "q": "Traduisez : Il est un enfant. Merci !", "a": ["Han är ett barn. Tack"] },
-          { "id": "sv_c2_rev_10", "type": "strict", "hard": true, "q": "Traduisez : Bonjour, tu es ma maman.", "a": ["Hej, du är min mamma"] }
+          {
+            "id": "sv_c1_match_1",
+            "type": "match",
+            "q": "Associez chaque mot suédois à sa traduction française :",
+            "pairs": [
+              { "source": "Hej", "target": "Bonjour" },
+              { "source": "Tack", "target": "Merci" },
+              { "source": "Hejdå", "target": "Au revoir" },
+              { "source": "Ja", "target": "Oui" }
+            ]
+          },
+          {
+            "id": "sv_c1_strict_rev",
+            "type": "strict",
+            "q": "Traduisez fidèlement (attention aux majuscules) : Bonjour !",
+            "a": ["Hej !"]
+          }
         ]
       }
     }
