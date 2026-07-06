@@ -693,3 +693,115 @@ body.flash-gold{animation:flashGold 0.9s ease;}
   .lesson-row{grid-template-columns:1fr;}
   .flag-btn span:not(.flag-emoji):not(.chev){display:none;}
 }
+/* ============================================================
+   Extensions styles pour les nouveaux types d'exercices
+   ============================================================ */
+
+/* Compteur de révision et conteneur de barre fixe */
+.progress-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+.error-review-counter {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--rust);
+  text-align: right;
+  animation: fadeIn 0.3s ease;
+}
+
+/* 1. Style Cloze (Texte à trous) */
+.cloze-sentence {
+  font-size: 1.25rem;
+  line-height: 2rem;
+  color: var(--ink);
+  margin: 24px 0;
+  text-align: center;
+}
+.cloze-select {
+  padding: 6px 12px;
+  font-size: 1.1rem;
+  font-family: 'Fredoka', sans-serif;
+  border: 2px solid var(--blue-b);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+  color: var(--moss);
+  cursor: pointer;
+  outline: none;
+}
+.cloze-select.correct { border-color: var(--correct); background-color: var(--green); }
+.cloze-select.wrong { border-color: var(--wrong); background-color: #fce8e6; }
+
+/* 2. Style Jumble (Mots ordonnés) */
+.jumble-slots {
+  min-height: 60px;
+  border-bottom: 2px dashed var(--blue-b);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.jumble-slots.correct { border-bottom-color: var(--correct); }
+.jumble-slots.wrong { border-bottom-color: var(--wrong); }
+.jumble-pool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.jumble-chip {
+  padding: 10px 16px;
+  background: var(--panel);
+  border: 2px solid var(--blue-b);
+  border-radius: var(--radius-sm);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  color: var(--ink);
+  cursor: pointer;
+  box-shadow: 0 3px 0 var(--blue-b);
+  transition: transform 0.1s;
+}
+.jumble-chip:active { transform: translateY(3px); box-shadow: none; }
+
+/* 3. Style Match (Paires d'associations) */
+.match-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+.match-chip {
+  padding: 14px;
+  background: var(--panel);
+  border: 2px solid var(--blue-b);
+  border-radius: var(--radius-sm);
+  font-family: 'Fredoka', sans-serif;
+  font-size: 1rem;
+  color: var(--ink);
+  cursor: pointer;
+  text-align: center;
+  box-shadow: 0 4px 0 var(--blue-b);
+}
+.match-chip.selected {
+  background: var(--blue);
+  border-color: var(--gold);
+  box-shadow: 0 4px 0 var(--gold-dark);
+}
+.match-chip.matched {
+  background: var(--green);
+  border-color: var(--correct);
+  color: var(--correct);
+  box-shadow: none;
+  transform: translateY(4px);
+  cursor: default;
+}
+.match-chip.wrong {
+  background: #fce8e6;
+  border-color: var(--wrong);
+  color: var(--wrong);
+  box-shadow: 0 4px 0 var(--wrong);
+}
