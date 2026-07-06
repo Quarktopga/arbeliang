@@ -12,32 +12,47 @@ const LESSON_LABEL = { vocab: 'Vocabulaire', grammar: 'Grammaire', reading: 'Com
 const LESSON_ICON = { vocab: '🌿', grammar: '🏛️', reading: '📖', review: '🔁' };
 const MILESTONES = [5, 10, 25, 50, 100];
 
-/* Lettres spéciales par langue, pour l'insertion au clic dans les champs de saisie */
+/* Lettres spéciales par langue */
 const SPECIAL_CHARS = {
   svenska: ['å', 'ä', 'ö', 'Å', 'Ä', 'Ö'],
   deutsch: ['ä', 'ö', 'ü', 'ß', 'Ä', 'Ö', 'Ü'],
   gaeilge: ['á', 'é', 'í', 'ó', 'ú', 'Á', 'É', 'Í', 'Ó', 'Ú']
 };
 
-/* ---------- Persisted state (localStorage) ---------- */
+/* ---------- Persisted state (localStorage sécurisé) ---------- */
 const STORE_KEY = 'arbeliang_state_v1';
 function loadState(){
   try{
     const raw = localStorage.getItem(STORE_KEY);
-    if(raw) return JSON.parse(raw);
+    if(raw) {
+      const parsed = JSON.parse(raw);
+      // Sécurisation et validation des types critiques
+      if (typeof parsed.points !== 'number' || isNaN(parsed.points)) parsed.points = 0;
+      if (typeof parsed.streak !== 'number' || isNaN(parsed.streak)) parsed.streak = 0;
+      if (!parsed.progress) parsed.progress = {};
+      if (!parsed.learnedWords) parsed.learnedWords = {};
+      if (!parsed.mistakes) parsed.mistakes = {};
+      if (!parsed.exerciseBank) parsed.exerciseBank = {};
+      return parsed;
+    }
   }catch(e){}
   return {
     points: 0,
     streak: 0,
-    progress: {},       // progress[lang][level] = { completedChapters: [chapterId,...], completedLessons: {chapterId: [lessonType,...]} }
-    learnedWords: {},    // learnedWords[lang][wordId] = { anchored: bool, seenCorrectStreak: n }
-    mistakes: {},        // mistakes[lang][exerciseId] = { fixed: bool }
-    exerciseBank: {}      // exerciseBank[lang][exerciseId] = the exercise object (cached for hub replays)
+    progress: {},       
+    learnedWords: {},    
+    mistakes: {},        
+    exerciseBank: {}      
   };
 }
 let STATE = loadState();
 function saveState(){
-  localStorage.setItem(STORE_KEY, JSON.stringify(STATE));
+  try {
+    if (typeof STATE.points !== 'number' || isNaN(STATE.points)) STATE.points = 0;
+    localStorage.setItem(STORE_KEY, JSON.stringify(STATE));
+  } catch(e) {
+    console.error("Impossible de sauvegarder l'état dans le stockage local", e);
+  }
 }
 function ensurePath(obj, ...keys){
   let cur = obj;
@@ -56,7 +71,7 @@ function getParams(){
     level: p.get('level') || 'debutant',
     chapter: p.get('chapter') || null,
     lesson: p.get('lesson') || null,
-    view: p.get('view') || null // 'hub'
+    view: p.get('view') || null 
   };
 }
 function setParams(next, push=true){
@@ -216,7 +231,6 @@ document.addEventListener('click', ()=>{
   levelDropdown.classList.remove('open');
 });
 brand.addEventListener('click', ()=>{
-  const { lang, level } = getParams();
   setParams({ chapter: null, lesson: null, view: null });
   route();
 });
@@ -251,8 +265,6 @@ function markLessonDone(lang, level, chapterId, lessonType){
   saveState();
 }
 
-/* Unlock logic: chapter[i] unlocked if i===0 or chapter[i-1] fully done.
-   Lesson[j] in a chapter unlocked if j===0 or lesson[j-1] done in that chapter (and chapter itself unlocked). */
 function isChapterUnlocked(chapters, lang, level, idx){
   if(idx === 0) return true;
   return isChapterDone(lang, level, chapters[idx-1].chapterId);
@@ -264,7 +276,7 @@ function isLessonUnlocked(lang, level, chapters, chapterIdx, lessonIdx){
   return isLessonDone(lang, level, chapterId, LESSON_TYPES[lessonIdx-1]);
 }
 
-/* ---------- Vocabulary tracking (hub: "Vocabulaire à ancrer") ---------- */
+/* ---------- Vocabulary tracking ---------- */
 function registerLearnedWord(lang, wordId){
   const bank = ensurePath(STATE.learnedWords, lang);
   if(!bank[wordId]) bank[wordId] = { anchored: false, correctStreak: 0 };
@@ -285,7 +297,7 @@ function getUnanchoredWords(lang){
   return Object.keys(bank).filter(id => !bank[id].anchored);
 }
 
-/* ---------- Mistake tracking (hub: "Erreurs à corriger") ---------- */
+/* ---------- Mistake tracking ---------- */
 function registerMistake(lang, exercise){
   const bank = ensurePath(STATE.mistakes, lang);
   bank[exercise.id] = { fixed: false };
@@ -305,7 +317,7 @@ function getReviewCount(lang){
   return getUnanchoredWords(lang).length + getOpenMistakes(lang).length;
 }
 
-/* ---------- Streak (global, cross-lesson) ---------- */
+/* ---------- Streak (global) ---------- */
 function bumpStreak(correct){
   if(correct){
     STATE.streak++;
@@ -357,7 +369,7 @@ async function route(){
 window.addEventListener('popstate', route);
 
 /* ============================================================
-   PATH VIEW (chapters/lessons overview)
+   PATH VIEW
    ============================================================ */
 async function renderPathView(lang, level){
   root.innerHTML = `<div class="app"><p class="page-sub">Chargement…</p></div>`;
@@ -420,7 +432,7 @@ function escapeHtml(s){
    HUB VIEW
    ============================================================ */
 function renderHub(){
-  const { lang, level } = getParams();
+  const { lang } = getParams();
   const unanchored = getUnanchoredWords(lang);
   const mistakes = getOpenMistakes(lang);
 
@@ -463,14 +475,12 @@ async function runHubLesson(lang, hubType){
 
   if(hubType === 'vocabAnchor'){
     const wordIds = getUnanchoredWords(lang);
-    // Find the vocab cards + their 2 dedicated exercises across all levels/chapters
     const allChapters = Object.values(data).flat();
     wordIds.forEach(wid=>{
       allChapters.forEach(ch=>{
         const vocabLessons = ch.lessons.vocab || [];
         const cardIdx = vocabLessons.findIndex(it => it.type === 'card' && it.id === wid);
         if(cardIdx !== -1){
-          // grab the following non-card items until next card (dedicated exercises)
           for(let i=cardIdx+1; i<vocabLessons.length; i++){
             if(vocabLessons[i].type === 'card') break;
             exercises.push({ ...vocabLessons[i], _wordId: wid });
@@ -516,17 +526,20 @@ async function renderLessonRuntime(lang, level, chapterId, lessonType, isHub, hu
   }
 
   const isRedo = !isHub && isLessonDone(lang, level, chapterId, lessonType);
+  const coreCount = exercises.filter(e => e.type !== 'card' && e.type !== 'gcard').length;
 
   runtimeState = {
     lang, level, chapterId, lessonType, isHub, hubType: isHub ? hubData.hubType : null,
     isRedo,
     queue: exercises,
-    originalCount: exercises.filter(e => e.type !== 'card' && e.type !== 'gcard').length,
-    totalScoreable: exercises.filter(e => e.type !== 'card' && e.type !== 'gcard').length,
+    originalCount: coreCount || 1, 
     correctCount: 0,
-    answeredCount: 0,
+    mainAnsweredCount: 0,     // Compte les exercices initiaux terminés (pour progression stricte)
+    errorsReviewedCount: 0,   // X erreurs revues
+    totalErrorsToReview: 0,   // Y erreurs totales à revoir en fin de session
     pointsEarned: 0,
     retryQueue: [],
+    inRetryPhase: false,       // Passe à true quand on traite les erreurs uniques
     currentAnswered: false,
     lastCorrect: null
   };
@@ -541,7 +554,10 @@ function renderLessonShell(title){
       <div class="progress-wrap">
         <button class="close-lesson" id="closeLesson">✕</button>
         <div class="streak-line" id="streakLine"></div>
-        <div class="progress-bar-outer"><div class="progress-bar-inner" id="progBar"></div></div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-outer"><div class="progress-bar-inner" id="progBar"></div></div>
+          <div class="error-review-counter hidden" id="errCounter">Erreurs revues : 0/0</div>
+        </div>
       </div>
       <div id="exoZone"></div>
     </div>
@@ -568,25 +584,32 @@ function updateStreakLine(){
 
 function updateProgressBar(){
   const rs = runtimeState;
-  const totalUnits = rs.originalCount + rs.retryQueue.length + (rs.queue.filter(e=>e._isRetry).length);
-  const doneUnits = rs.answeredCount;
-  const denom = Math.max(rs.originalCount, doneUnits) + rs.retryQueue.length;
-  const pct = denom > 0 ? Math.min(100, Math.round((doneUnits/ (rs.originalCount + countTotalRetriesEver())) * 100)) : 0;
+  
+  // Progression fixe basée exclusivement sur les questions initiales
+  const pct = Math.min(100, Math.round((rs.mainAnsweredCount / rs.originalCount) * 100));
   document.getElementById('progBar').style.width = pct + '%';
-}
-function countTotalRetriesEver(){
-  return runtimeState._retriesEverAdded || 0;
+
+  // Gestion de l'indicateur "X/Y erreurs revues"
+  const errCounterEl = document.getElementById('errCounter');
+  if(rs.inRetryPhase || rs.totalErrorsToReview > 0) {
+    errCounterEl.classList.remove('hidden');
+    errCounterEl.textContent = `Erreurs revues : ${rs.errorsReviewedCount}/${rs.totalErrorsToReview}`;
+  }
 }
 
 function renderNextExercise(){
   const rs = runtimeState;
 
   if(rs.queue.length === 0){
-    if(rs.retryQueue.length > 0){
+    if(rs.retryQueue.length > 0 && !rs.inRetryPhase){
+      // Déclenchement de la phase de révision unique
       rs.queue = rs.retryQueue;
       rs.retryQueue = [];
+      rs.inRetryPhase = true;
+      rs.totalErrorsToReview = rs.queue.length;
       rs.queue.forEach(e => e._isRetry = true);
     } else {
+      // Déjà en phase d'erreur ou aucune erreur : leçon finie
       finishLesson();
       return;
     }
@@ -610,7 +633,6 @@ function exoCardKindClass(ex){
   if(ex.hard) return 'kind-hard';
   if(ex.type === 'card') return 'kind-vocab';
   if(ex.type === 'gcard') return 'kind-grammar';
-  // heuristic: grammar-origin ids contain _g_
   if(ex.id && ex.id.includes('_g_')) return 'kind-grammar';
   if(ex.id && ex.id.includes('_v_')) return 'kind-vocab';
   return '';
@@ -624,19 +646,17 @@ function renderVocabCard(ex){
       <div class="card-face">
         <div class="card-fr">${escapeHtml(ex.fr)}</div>
         <div class="card-target">${escapeHtml(ex.target)}</div>
-        <div class="card-hint">Mémorise ce mot — deux exercices vont suivre.</div>
+        <div class="card-hint">Mémorise ce mot — des exercices vont suivre.</div>
       </div>
       <div class="action-row">
         <button class="btn-validate" id="btnNext">Continuer</button>
       </div>
     </div>
   `;
-  // register learned word (not in hub context, only original path)
   if(!runtimeState.isHub){
     registerLearnedWord(runtimeState.lang, ex.id);
   }
   document.getElementById('btnNext').addEventListener('click', ()=>{
-    runtimeState.answeredCount++; // counts as a step for progress bar smoothness
     renderNextExercise();
   });
 }
@@ -662,18 +682,52 @@ function renderQuestion(ex){
   const zone = document.getElementById('exoZone');
   const kindClass = exoCardKindClass(ex);
   let tagLabel = ex.hard ? '⚡ Difficile' : (kindClass==='kind-grammar' ? '🏛️ Grammaire' : kindClass==='kind-vocab' ? '🌿 Vocabulaire' : '📘 Question');
-  if(ex._isRetry) tagLabel += '<span class="tag-mistake">Erreur à corriger</span>';
+  if(ex._isRetry) tagLabel += ' <span class="tag-mistake">| Révision</span>';
 
   const ctxHtml = ex.ctx ? `<div class="context-box">${escapeHtml(ex.ctx)}</div>` : '';
-
   let bodyHtml = '';
+  
+  // 1. FORMAT QCM
   if(ex.type === 'qcm'){
-    bodyHtml = `<div class="options">` + ex.options.map((opt, i)=>
+    bodyHtml = `<div class="options">` + ex.options.map((opt)=>
       `<button class="option-btn" data-opt="${escapeHtml(opt)}">${escapeHtml(opt)}</button>`
     ).join('') + `</div>`;
-  } else if(ex.type === 'strict'){
+  } 
+  // 2. FORMAT SAISIE STRICT
+  else if(ex.type === 'strict'){
     bodyHtml = `<input type="text" class="strict-input" id="strictInput" placeholder="Écris ta réponse…" autocomplete="off" autocorrect="off" spellcheck="false" />`
       + renderSpecialCharsRow(runtimeState.lang);
+  }
+  // 3. NOUVEAU : FORMAT CLOZE (TEXTE À TROUS)
+  else if(ex.type === 'cloze'){
+    const selectHtml = `<select class="cloze-select" id="clozeSelect">
+      <option value="" disabled selected>...</option>
+      ${ex.options.map(o => `<option value="${escapeHtml(o)}">${escapeHtml(o)}</option>`).join('')}
+    </select>`;
+    const interactiveText = ex.text.replace('[blank]', selectHtml);
+    bodyHtml = `<div class="cloze-sentence">${interactiveText}</div>`;
+  }
+  // 4. NOUVEAU : FORMAT JUMBLE (CONSTRUCTEUR DE PHRASE)
+  else if(ex.type === 'jumble'){
+    bodyHtml = `
+      <div class="jumble-slots" id="jumbleSlots" placeholder="Clique sur les mots pour construire la phrase"></div>
+      <div class="jumble-pool" id="jumblePool">
+        ${ex.words.map(w => `<button class="jumble-chip" data-word="${escapeHtml(w)}">${escapeHtml(w)}</button>`).join('')}
+      </div>`;
+  }
+  // 5. NOUVEAU : FORMAT MATCH (ASSOCIATION DE PAIRES)
+  else if(ex.type === 'match'){
+    // Mélange des éléments sources et cibles dans une seule grille
+    const elements = [];
+    ex.pairs.forEach((p, idx) => {
+      elements.push({ id: idx, type: 'src', val: p.source });
+      elements.push({ id: idx, type: 'tgt', val: p.target });
+    });
+    elements.sort(() => Math.random() - 0.5);
+
+    bodyHtml = `<div class="match-grid">` + elements.map(el => 
+      `<button class="match-chip" data-id="${el.id}" data-type="${el.type}">${escapeHtml(el.val)}</button>`
+    ).join('') + `</div>`;
   }
 
   zone.innerHTML = `
@@ -690,6 +744,7 @@ function renderQuestion(ex){
 
   const validateBtn = document.getElementById('btnValidate');
 
+  // FILAGE ET LOGIQUE DES COMPOSANTS INTERACTIFS
   if(ex.type === 'qcm'){
     let selected = null;
     zone.querySelectorAll('.option-btn').forEach(btn=>{
@@ -708,16 +763,11 @@ function renderQuestion(ex){
         renderNextExercise();
       }
     });
-  } else if(ex.type === 'strict'){
+  } 
+  else if(ex.type === 'strict'){
     const input = document.getElementById('strictInput');
-    input.addEventListener('input', ()=>{
-      validateBtn.disabled = input.value.trim().length === 0;
-    });
-    input.addEventListener('keydown', (e)=>{
-      if(e.key === 'Enter' && !validateBtn.disabled){
-        validateBtn.click();
-      }
-    });
+    input.addEventListener('input', () => { validateBtn.disabled = input.value.trim().length === 0; });
+    input.addEventListener('keydown', (e) => { if(e.key === 'Enter' && !validateBtn.disabled) validateBtn.click(); });
     validateBtn.addEventListener('click', ()=>{
       if(!runtimeState.currentAnswered){
         const val = input.value.trim();
@@ -729,6 +779,108 @@ function renderQuestion(ex){
     });
     setTimeout(()=>input.focus(), 50);
     wireSpecialChars(input);
+  }
+  else if(ex.type === 'cloze'){
+    const select = document.getElementById('clozeSelect');
+    select.addEventListener('change', () => { validateBtn.disabled = false; });
+    validateBtn.addEventListener('click', () => {
+      if(!runtimeState.currentAnswered){
+        handleAnswer(ex, select.value === ex.a, select.value);
+      } else {
+        renderNextExercise();
+      }
+    });
+  }
+  else if(ex.type === 'jumble'){
+    const slots = document.getElementById('jumbleSlots');
+    const pool = document.getElementById('jumblePool');
+    
+    pool.querySelectorAll('.jumble-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        if(runtimeState.currentAnswered) return;
+        if(chip.parentElement === pool){
+          slots.appendChild(chip);
+        } else {
+          pool.appendChild(chip);
+        }
+        const activeChips = slots.querySelectorAll('.jumble-chip');
+        validateBtn.disabled = activeChips.length === 0;
+      });
+    });
+
+    validateBtn.addEventListener('click', () => {
+      if(!runtimeState.currentAnswered){
+        const built = Array.from(slots.querySelectorAll('.jumble-chip')).map(c => c.dataset.word).join(' ');
+        const correct = ex.a.some(ans => normalizeStr(ans) === normalizeStr(built));
+        handleAnswer(ex, correct, built);
+      } else {
+        renderNextExercise();
+      }
+    });
+  }
+  else if(ex.type === 'match'){
+    let activeSelection = null;
+    let completedPairs = 0;
+    const totalPairs = ex.pairs.length;
+
+    zone.querySelectorAll('.match-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        if(runtimeState.currentAnswered || chip.classList.contains('matched')) return;
+
+        if(!activeSelection){
+          activeSelection = chip;
+          chip.classList.add('selected');
+        } else if(activeSelection === chip){
+          chip.classList.remove('selected');
+          activeSelection = null;
+        } else {
+          // Comparaison de la paire
+          const id1 = activeSelection.dataset.id;
+          const type1 = activeSelection.dataset.type;
+          const id2 = chip.dataset.id;
+          const type2 = chip.dataset.type;
+
+          if(id1 === id2 && type1 !== type2){
+            // Bonne correspondance !
+            activeSelection.classList.remove('selected');
+            activeSelection.classList.add('matched');
+            chip.classList.add('matched');
+            completedPairs++;
+            playCorrectSound();
+            activeSelection = null;
+
+            if(completedPairs === totalPairs){
+              validateBtn.disabled = false;
+              // Simulation d'une réponse valide instantanée
+              validateBtn.classList.add('state-correct');
+              validateBtn.textContent = 'Continuer';
+              runtimeState.currentAnswered = true;
+            }
+          } else {
+            // Mauvaise correspondance
+            chip.classList.add('wrong');
+            activeSelection.classList.add('wrong');
+            playWrongSound();
+            const temp = activeSelection;
+            setTimeout(() => {
+              chip.classList.remove('wrong');
+              temp.classList.remove('wrong', 'selected');
+            }, 400);
+            activeSelection = null;
+          }
+        }
+      });
+    });
+
+    validateBtn.addEventListener('click', () => {
+      // Les matches valident directement au succès global, on passe au suivant
+      if(!runtimeState.inRetryPhase) runtimeState.mainAnsweredCount++;
+      else runtimeState.errorsReviewedCount++;
+      runtimeState.correctCount++;
+      // Score paires
+      runtimeState.pointsEarned += runtimeState.isHub ? 3 : (runtimeState.isRedo ? 1 : 5);
+      renderNextExercise();
+    });
   }
 }
 
@@ -750,9 +902,7 @@ function wireSpecialChars(input){
       const char = btn.dataset.char;
       const start = input.selectionStart ?? input.value.length;
       const end = input.selectionEnd ?? input.value.length;
-      const before = input.value.slice(0, start);
-      const after = input.value.slice(end);
-      input.value = before + char + after;
+      input.value = input.value.slice(0, start) + char + input.value.slice(end);
       const caretPos = start + char.length;
       input.focus();
       input.setSelectionRange(caretPos, caretPos);
@@ -761,11 +911,10 @@ function wireSpecialChars(input){
   });
 }
 
-
 function normalizeStr(s){
+  // Tolère uniquement les majuscules et la ponctuation terminale (! . ?)
   return s.trim().toLowerCase()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '') // tolère les accents manquants
-    .replace(/[.,!?;:]+$/g, '')                        // tolère la ponctuation finale
+    .replace(/[.!?]+$/g, '') 
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -773,13 +922,18 @@ function normalizeStr(s){
 function handleAnswer(ex, isCorrect, userAnswer){
   const rs = runtimeState;
   rs.currentAnswered = true;
-  rs.answeredCount++;
+
+  if(!rs.inRetryPhase) {
+    rs.mainAnsweredCount++; // Compteur fixe pour la barre de progression
+  } else {
+    rs.errorsReviewedCount++; // Compteur d'erreurs revues
+  }
 
   const zone = document.getElementById('exoZone');
   const card = document.getElementById('exoCardEl');
   const validateBtn = document.getElementById('btnValidate');
 
-  // visual feedback on options / input
+  // FEEDBACKS VISUELS ADAPTATIFS
   if(ex.type === 'qcm'){
     zone.querySelectorAll('.option-btn').forEach(b=>{
       b.disabled = true;
@@ -794,6 +948,25 @@ function handleAnswer(ex, isCorrect, userAnswer){
       const hint = document.createElement('div');
       hint.className = 'card-hint';
       hint.textContent = 'Réponse attendue : ' + ex.a[0];
+      card.insertBefore(hint, card.querySelector('.action-row'));
+    }
+  } else if(ex.type === 'cloze'){
+    const select = document.getElementById('clozeSelect');
+    select.disabled = true;
+    select.classList.add(isCorrect ? 'correct' : 'wrong');
+    if(!isCorrect){
+      const hint = document.createElement('div');
+      hint.className = 'card-hint';
+      hint.textContent = 'La bonne réponse était : ' + ex.a;
+      card.insertBefore(hint, card.querySelector('.action-row'));
+    }
+  } else if(ex.type === 'jumble'){
+    const slots = document.getElementById('jumbleSlots');
+    slots.classList.add(isCorrect ? 'correct' : 'wrong');
+    if(!isCorrect){
+      const hint = document.createElement('div');
+      hint.className = 'card-hint';
+      hint.textContent = 'Ordre attendu : ' + ex.a[0];
       card.insertBefore(hint, card.querySelector('.action-row'));
     }
   }
@@ -814,66 +987,39 @@ function handleAnswer(ex, isCorrect, userAnswer){
   bumpStreak(isCorrect);
   updateStreakLine();
 
-  // scoring & retry-queue logic
+  // SCORE ET REMISE UNIQUE D'ERREUR
   if(isCorrect){
     rs.correctCount++;
     const basePts = ex.hard ? 7 : 5;
-    if(rs.isHub){
-      rs.pointsEarned += 3;
-    } else if(rs.isRedo){
-      rs.pointsEarned += 1;
-    } else {
-      rs.pointsEarned += basePts;
-    }
+    if(rs.isHub) rs.pointsEarned += 3;
+    else if(rs.isRedo) rs.pointsEarned += 1;
+    else rs.pointsEarned += basePts;
 
-    // vocab reinforcement tracking (only in main path, exercises tied to a word)
-    if(!rs.isHub && ex.id){
-      // no direct word link outside vocab lesson; handled via _wordId in hub context below
-    }
-    if(ex._wordId){
-      reinforceWord(rs.lang, ex._wordId, true);
-    }
-    if(ex._mistakeId){
-      fixMistake(rs.lang, ex._mistakeId);
-    }
-    if(ex._isRetry){
-      // was previously wrong this session, now fixed — no chapterly mistake registration needed
-    } else if(!rs.isHub && !ex._mistakeId){
-      // if this exercise had been a past mistake outside hub, mark fixed too
+    if(ex._wordId) reinforceWord(rs.lang, ex._wordId, true);
+    if(ex._mistakeId) fixMistake(rs.lang, ex._mistakeId);
+    
+    if(!rs.isHub && !ex._mistakeId && !ex._isRetry){
       const bank = STATE.mistakes[rs.lang];
-      if(bank && bank[ex.id] && !bank[ex.id].fixed){
-        fixMistake(rs.lang, ex.id);
-      }
+      if(bank && bank[ex.id] && !bank[ex.id].fixed) fixMistake(rs.lang, ex.id);
     }
   } else {
-    if(ex._wordId){
-      reinforceWord(rs.lang, ex._wordId, false);
-    }
-    if(!rs.isHub){
-      registerMistake(rs.lang, ex);
-    }
+    if(ex._wordId) reinforceWord(rs.lang, ex._wordId, false);
+    if(!rs.isHub) registerMistake(rs.lang, ex);
+    
+    // Remise UNE SEULE FOIS (uniquement si on ne vient pas déjà d'une révision)
     if(!ex._isRetry){
-      rs._retriesEverAdded = (rs._retriesEverAdded || 0) + 1;
-      rs.retryQueue.push({ ...ex, _isRetry: true });
-    } else {
-      // still wrong on retry: push back again to retry queue (will resurface again)
-      rs._retriesEverAdded = (rs._retriesEverAdded || 0) + 1;
-      rs.retryQueue.push(ex);
+      rs.retryQueue.push({ ...ex });
     }
   }
 
-  // live localStorage update per-question for hub lessons
-  if(rs.isHub){
-    saveState();
-  }
-
+  if(rs.isHub) saveState();
   updateProgressBar();
 }
 
 /* ---------- Finish lesson ---------- */
 function finishLesson(){
   const rs = runtimeState;
-  const total = rs.totalScoreable || 1;
+  const total = rs.originalCount || 1;
   const pct = Math.round((rs.correctCount / total) * 100);
   const passed = pct >= 75;
 
@@ -887,7 +1033,6 @@ function finishLesson(){
     markLessonDone(rs.lang, rs.level, rs.chapterId, rs.lessonType);
     STATE.points += rs.pointsEarned;
   } else {
-    // failed lesson: no points, not validated (even if some were tentatively earned)
     rs.pointsEarned = 0;
   }
   saveState();
@@ -950,7 +1095,6 @@ function renderHubEndScreen(rs, pct){
 
 /* ---------- Init ---------- */
 (function init(){
-  // ensure GET params exist on first load
   const cur = getParams();
   setParams(cur, false);
   route();
